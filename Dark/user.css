@@ -57,8 +57,28 @@
     display: none;
 }
 
+.main-rootlist-rootlistItem {
+    background-image: 
+        /* linear-gradient(90deg,
+                        transparent 50%,
+                        rgba(0, 0, 0, 0.6) 50%,
+                        rgba(0, 0, 0, 0.6) 95%,
+                        var(--spice-text) 95%); */
+        linear-gradient(90deg,
+                        rgba(0, 0, 0, 0.6) 49%,
+                        var(--spice-text) 49%,
+                        var(--spice-text) 50%,
+                        transparent 50%,
+                        transparent 100%);
+    /* background: rgba(0,0,0,0.3); */
+    background-position: center right;
+    background-size: 200% 100%;
+    transition: all .4s ease;
+}
+
 .main-rootlist-rootlistItem:hover {
-    background: rgba(0,0,0,0.3);
+    /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0) 0%); */
+    background-position: center left;
 }
 
 /* playlist */
@@ -90,6 +110,17 @@
     box-shadow: 0px 0px 30px rgba(0,0,0,0.3);
 }
 
+.main-trackList-trackListRow,
+.main-trackList-trackListRow {
+    background: rgba(0, 0, 0, 0);
+    transition: background .4s ease;
+}
+
+.main-trackList-trackListRow:focus-within,
+.main-trackList-trackListRow:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
 /* player */
 
 .Root__now-playing-bar {
@@ -97,7 +128,7 @@
     border-radius: 10px;
     background: rgba(0,0,0,0.2);
     /* backdrop-filter: blur(5px); */
-    width: 50%;
+    width: 60%;
     /* height: 50%; */
     position: fixed;
     bottom: 0;
