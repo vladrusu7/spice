@@ -1,0 +1,221 @@
+.main-leaderboardComponent-container,
+.main-billboardComponent-footer,
+.main-topBar-UpgradeButton,
+.main-contextMenu-menuItemButton[href*="premium"] {
+  display: none;
+}
+
+.main-view-container__scroll-node-child {
+    padding-bottom: 150px;
+}
+
+.main-entityHeader-backgroundColor,
+.main-actionBarBackground-background,
+.main-topBar-overlay {
+    background: transparent !important;
+}
+
+/* top bar */
+.main-topBar-background {
+    background: var(--spice-main) !important;
+}
+
+.main-userWidget-box,
+.main-topBar-historyButtons .main-topBar-button {
+    background: none;
+    color: var(--spice-button);
+}
+
+.main-topBar-historyButtons .main-topBar-button:hover:not([disabled]),
+.main-topBar-historyButtons .main-topBar-button:active:not([disabled]),
+.main-userWidget-box:hover,
+.main-userWidget-box[data-context-menu-open="true"] {
+    background-color: rgba(var(--spice-rgb-shadow),.7);
+    color: var(--spice-button-active);
+}
+.main-topBar-historyButtons .main-topBar-button:active:not([disabled]) {
+    transform: scale(0.9);
+}
+
+/* popouts */
+.main-contextMenu-menuItemButton {
+    color: var(--spice-button);
+}
+/* .main-entityHeader-container.main-entityHeader-nonWrapped {
+    min-height: 280px;
+} */
+
+/* sidebar */
+.main-collectionLinkButton-collectionLinkButton, .main-createPlaylistButton-button {
+    color: var(--spice-button);
+}
+.main-collectionLinkButton-collectionLinkButton:hover, .main-createPlaylistButton-button:hover,
+.main-rootlist-playButton svg {
+    color: var(--spice-button-active);
+}
+.main-rootlist-rootlistDividerContainer {
+    display: none;
+}
+
+.main-rootlist-rootlistItem:hover {
+    background: rgba(0,0,0,0.3);
+}
+
+/* playlist */
+.main-entityHeader-headerText,
+.main-entityHeader-metaDataText,
+.main-duration-container {
+    color: var(--spice-subtext);
+}
+.main-playButton-PlayButton.main-playButton-primary {
+    background: var(--spice-main);
+    color: var(--spice-button);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.main-playButton-PlayButton.main-playButton-primary:hover {
+    color: var(--spice-button-active);
+}
+.main-trackList-rowTitle {
+    color: var(--spice-button);
+}
+.main-trackList-trackListRow:hover .main-trackList-rowTitle,
+.main-trackList-trackListRow.main-trackList-selected .main-trackList-rowTitle {
+    color: var(--spice-button-active);
+}
+.main-trackList-trackListRow:focus-within,
+.main-trackList-trackListRow.main-trackList-selected {
+    background-color: rgba(var(--spice-rgb-selected-row),.3);
+}
+.main-entityHeader-shadow {
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.3);
+}
+
+/* player */
+
+.Root__now-playing-bar {
+    /* box-shadow: 0px -15px 100px rgba(0,0,0,0.3); */
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2);
+    /* backdrop-filter: blur(5px); */
+    width: 50%;
+    /* height: 50%; */
+    position: fixed;
+    bottom: 0;
+    margin: 0px auto 50px;
+    left: 0;
+    right: 0;
+}
+
+.Root__now-playing-bar::before {
+    content: "";
+    border-radius: 10px;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.main-nowPlayingBar-container {
+    background: transparent;
+    border: none;
+}
+
+.main-coverSlotCollapsed-container {
+    display: none;
+}
+
+.main-trackInfo-container {
+    margin: 0;
+}
+
+.volume-bar {
+    display: flex;
+    flex: 0;
+    flex-direction: column-reverse;
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+.volume-bar .playback-progressbar {
+    position: relative;
+    display: none;
+    transform: rotate(-90deg);
+    height: 0;
+    width: 300%;
+    bottom: 50px;
+}
+
+.volume-bar .playback-progressbar::before {
+    content: "";
+    position: absolute;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+    display: none;
+    height: 50px;
+    width: 110px;
+    margin-left: -10px;
+    margin-top: -25px;
+}
+
+.volume-bar:hover .playback-progressbar {
+    display: block;
+}
+
+.volume-bar:hover .playback-progressbar:before {
+    display: block;
+}
+
+.main-shuffleButton-button,
+.main-skipBackButton-button,
+.main-skipForwardButton-button,
+.main-repeatButton-button,
+.control-button:not(.control-button--active), .control-button:focus,
+.main-addButton-button,
+.main-playPauseButton-button svg {
+    color: var(--spice-button);
+}
+
+.player-controls__buttons {
+    margin-bottom: 5px;
+}
+.main-playPauseButton-button {
+    --button-size: 50px !important;
+    background-color: var(--spice-player);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.player-controls__buttons button:not(.main-playPauseButton-button) {
+    /* --button-size: 50px !important; */
+    height: unset;
+}
+
+.main-shuffleButton-button:hover, .main-shuffleButton-button.main-shuffleButton-on, .main-shuffleButton-button.main-shuffleButton-on:not([disabled]):focus:not(:focus-visible):not(:hover),
+.main-skipBackButton-button:hover,
+.main-skipForwardButton-button:hover,
+.main-repeatButton-button:hover, .main-repeatButton-button.main-repeatButton-on, .main-repeatButton-button.main-repeatButton-on:not([disabled]):focus:not(:focus-visible):not(:hover),
+.control-button:hover, .control-button--active,
+.spoticon-devices-16.control-button--active,
+.main-addButton-active,.main-addButton-active:focus,.main-addButton-active:hover,
+.main-playPauseButton-button:hover svg,
+.main-playPauseButton-button:active svg {
+    color: var(--spice-button-active);
+}
+
+.progress-bar--is-active .progress-bar__fg,
+.progress-bar--is-active .progress-bar__slider,
+.control-button--active-dot:after {
+    background: var(--spice-button-active);
+}
+
+.main-shuffleButton-button:active,
+.main-skipBackButton-button:active,
+.main-skipForwardButton-button:active,
+.main-repeatButton-button:active,
+.control-button:focus:active, .control-button:hover:active, .control-button--active:not(.control-button--disabled):active:focus, .control-button--active:not(.control-button--disabled):active:hover,
+.main-playPauseButton-button:active {
+    transform: scale(0.9);
+    color: var(--spice-button-active);
+}
