@@ -281,10 +281,10 @@
     display: var(--show-lyrics-background);
 }
 
-.main-shuffleButton-button,
-.main-skipBackButton-button,
-.main-skipForwardButton-button,
-.main-repeatButton-button,
+.main-shuffleButton-button, .main-shuffleButton-button:focus:not(:focus-visible):not(:hover),
+.main-skipBackButton-button, .main-skipBackButton-button:focus:not(:focus-visible):not(:hover),
+.main-skipForwardButton-button, .main-skipForwardButton-button:focus:not(:focus-visible):not(:hover),
+.main-repeatButton-button, .main-repeatButton-button:focus:not(:focus-visible):not(:hover),
 .control-button:not(.control-button--active), .control-button:focus,
 .main-addButton-button,
 .main-playPauseButton-button svg {
@@ -305,10 +305,10 @@
     height: unset;
 }
 
-.main-shuffleButton-button:hover, .main-shuffleButton-button.main-shuffleButton-on, .main-shuffleButton-button.main-shuffleButton-on:not([disabled]):focus:not(:focus-visible):not(:hover),
+.main-shuffleButton-button:hover, .main-shuffleButton-button.main-shuffleButton-active, .main-shuffleButton-button.main-shuffleButton-active:not([disabled]):focus:not(:focus-visible):not(:hover),
 .main-skipBackButton-button:hover,
 .main-skipForwardButton-button:hover,
-.main-repeatButton-button:hover, .main-repeatButton-button.main-repeatButton-on, .main-repeatButton-button.main-repeatButton-on:not([disabled]):focus:not(:focus-visible):not(:hover),
+.main-repeatButton-button:hover, .main-repeatButton-button.main-repeatButton-active, .main-repeatButton-button.main-repeatButton-active:not([disabled]):focus:not(:focus-visible):not(:hover),
 .control-button:hover, .control-button--active,
 .spoticon-devices-16.control-button--active,
 .main-addButton-active,.main-addButton-active:focus,.main-addButton-active:hover,
