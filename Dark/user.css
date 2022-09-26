@@ -46,6 +46,11 @@
     background-color: rgba(var(--spice-rgb-shadow),.7);
     color: var(--spice-button-active);
 }
+.main-topBar-historyButtons .main-topBar-button:hover:not([disabled]) .main-topBar-icon,
+.main-topBar-historyButtons .main-topBar-button:active:not([disabled]) .main-topBar-icon {
+    color: var(--spice-button-active);
+}
+
 .main-topBar-historyButtons .main-topBar-button:active:not([disabled]) {
     transform: scale(0.9);
 }
@@ -59,7 +64,8 @@
 } */
 
 /* sidebar */
-.main-collectionLinkButton-collectionLinkButton, .main-createPlaylistButton-button {
+.main-collectionLinkButton-collectionLinkButton, .main-createPlaylistButton-button,
+.main-navBar-navBarItem .main-navBar-navBarLink {
     color: var(--spice-button);
 }
 .main-collectionLinkButton-collectionLinkButton:hover, .main-createPlaylistButton-button:hover,
@@ -67,7 +73,11 @@
 .main-rootlist-rootlistItemOverlay:hover~.main-rootlist-rootlistItemLink,
 .main-rootlist-rootlistItemLink.main-rootlist-rootlistItemLinkActive,
 .main-rootlist-rootlistItemLink:focus,
-.main-rootlist-rootlistItemLink:hover {
+.main-rootlist-rootlistItemLink:hover,
+.main-navBar-navBarItem:hover .main-navBar-navBarLink,
+.main-navBar-navBarItem:hover .main-navBar-navBarLink svg,
+.main-navBar-navBarItem .main-navBar-navBarLink.main-navBar-navBarLinkActive,
+.main-navBar-navBarItem .main-navBar-navBarLink.main-navBar-navBarLinkActive svg {
     color: var(--spice-button-active);
 }
 .main-rootlist-rootlistDividerContainer {
@@ -164,8 +174,8 @@
 
 .Root__now-playing-bar {
     /* box-shadow: 0px -15px 100px rgba(0,0,0,0.3); */
-    /* border-radius: 10px; */
-    background: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    /* background: rgba(0,0,0,0.4); */
     /* backdrop-filter: blur(5px); */
     width: 60%;
     /* height: 50%; */
@@ -178,8 +188,8 @@
 
 .Root__now-playing-bar::before {
     content: "";
-    border-radius: 10px;
-    /* background: rgba(0,0,0,0.2); */
+    /* border-radius: 10px; */
+    background: rgba(0,0,0,0.4);
     backdrop-filter: blur(5px);
     position: absolute;
     width: 100%;
