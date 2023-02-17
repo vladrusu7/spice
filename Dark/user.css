@@ -126,29 +126,42 @@
 .main-playButton-PlayButton.main-playButton-primary:hover {
     color: var(--spice-button-active);
 } */
-.main-trackList-rowTitle,
-.main-trackList-trackListRow .Type__TypeElement-goli3j-0,
-.main-trackList-rowSectionVariable[role="columnheader"] .Type__TypeElement-goli3j-0,
-.main-trackList-rowSectionStart[role="columnheader"] .Type__TypeElement-goli3j-0,
-.main-trackList-rowSectionEnd[role="columnheader"] .Type__TypeElement-goli3j-0 {
-    color: var(--spice-button);
+
+.main-trackList-trackListRow:not(.main-trackList-selected) .main-trackList-rowTitle,
+.main-trackList-trackListRow:not(.main-trackList-selected) .main-trackList-rowSectionVariable a,
+.main-trackList-trackListRow:not(.main-trackList-selected) .main-trackList-rowSectionVariable span,
+.main-trackList-trackListRow:not(.main-trackList-selected) .main-trackList-rowDuration {
+    color: var(--spice-text);
 }
 
+.main-trackList-trackListRow.main-trackList-selected .main-trackList-rowSubTitle a,
+.main-trackList-trackListRow:hover .main-trackList-rowSubTitle a,
+.main-trackList-trackListRow:focus-within .main-trackList-rowSubTitle a,
+.main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .main-trackList-rowSubTitle a,
 .main-trackList-trackListRow:focus-within .main-trackList-rowTitle,
 .main-trackList-trackListRow:hover .main-trackList-rowTitle,
 .main-trackList-trackListRow.main-trackList-selected .main-trackList-rowTitle,
 .main-trackList-trackListRow.main-trackList-selected:hover .main-trackList-rowTitle,
-.main-trackList-trackListRow:focus-within .Type__TypeElement-goli3j-0,
-.main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .Type__TypeElement-goli3j-0 a,
-.main-trackList-trackListRow:hover .Type__TypeElement-goli3j-0,
-.main-trackList-trackListRow:hover .Type__TypeElement-goli3j-0 a,
-.main-trackList-trackListRow.main-trackList-selected .Type__TypeElement-goli3j-0,
-.main-trackList-trackListRow.main-trackList-selected .Type__TypeElement-goli3j-0 a,
-.main-trackList-trackListRow.main-trackList-selected:hover .Type__TypeElement-goli3j-0,
+.main-trackList-trackListRow.main-trackList-selected .main-trackList-rowSectionVariable a,
+.main-trackList-trackListRow.main-trackList-selected:hover .main-trackList-rowSectionVariable a,
+.main-trackList-trackListRow:hover:not(.main-trackList-disabled) .main-trackList-rowSectionVariable a,
+.main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .main-trackList-rowSectionVariable a,
+.main-trackList-trackListRow.main-trackList-selected .main-trackList-rowSectionVariable span,
+.main-trackList-trackListRow.main-trackList-selected:hover .main-trackList-rowSectionVariable span,
+.main-trackList-trackListRow:hover:not(.main-trackList-disabled) .main-trackList-rowSectionVariable span,
+.main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .main-trackList-rowSectionVariable span,
+.main-trackList-trackListRow.main-trackList-selected .main-trackList-rowDuration,
+.main-trackList-trackListRow.main-trackList-selected:hover .main-trackList-rowDuration,
+.main-trackList-trackListRow:hover:not(.main-trackList-disabled) .main-trackList-rowDuration,
+.main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .main-trackList-rowDuration,
+.main-trackList-trackListRow.main-trackList-selected .main-trackList-rowHeartButton,
+.main-trackList-trackListRow.main-trackList-selected:hover .main-trackList-rowHeartButton,
+.main-trackList-trackListRow:hover:not(.main-trackList-disabled) .main-trackList-rowHeartButton,
+.main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .main-trackList-rowHeartButton,
 .main-trackList-trackListRow:hover:not(.main-trackList-disabled) .main-trackList-rowMoreButton,
 .main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .main-trackList-rowMoreButton,
-.main-trackList-rowSectionVariable[role="columnheader"]:not([aria-sort="none"]) .Type__TypeElement-goli3j-0,
-.main-trackList-rowSectionStart[role="columnheader"]:not([aria-sort="none"]) .Type__TypeElement-goli3j-0,
+.main-trackList-rowSectionVariable[role="columnheader"]:not([aria-sort="none"]) span,
+.main-trackList-rowSectionStart[role="columnheader"]:not([aria-sort="none"]) span,
 .main-trackList-rowSectionEnd[role="columnheader"]:not([aria-sort="none"]) button {
     color: var(--spice-button-active) !important;
 }
@@ -177,7 +190,7 @@
     border-radius: 10px;
     /* background: rgba(0,0,0,0.4); */
     /* backdrop-filter: blur(5px); */
-    width: 60%;
+    width: 750px;
     /* height: 50%; */
     position: fixed;
     bottom: 0;
@@ -202,12 +215,31 @@
     border: none;
 }
 
-.main-coverSlotCollapsed-container {
+/* .main-coverSlotCollapsed-container,
+.main-nowPlayingWidget-coverArt */
+.cover-art.shadow {
+    /* display: none; */
+    width: 40px !important;
+    height: 40px !important;
+}
+
+/* .main-trackInfo-container {
+    margin: 0;
+} */
+.main-coverSlotCollapsed-expandButton {
     display: none;
 }
 
-.main-trackInfo-container {
-    margin: 0;
+.main-nowPlayingWidget-nowPlaying .main-addButton-button {
+    display: none;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.main-nowPlayingWidget-nowPlaying:hover .main-addButton-button {
+    display: block;
 }
 
 .volume-bar {
@@ -249,12 +281,22 @@
 }
 
 .player-controls .playback-progressbar {
+    z-index: 10;
+}
+.main-nowPlayingBar-left,
+.main-nowPlayingBar-right,
+.player-controls .player-controls__buttons,
+.playback-bar__progress-time-elapsed,
+.main-playbackBarRemainingTime-container {
+    z-index: 11;
+}
+
+.player-controls .playback-progressbar {
     position: absolute;
     right: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: -20;
 }
 .player-controls .playback-progressbar .progress-bar {
     --progress-bar-height: 100%;
@@ -300,12 +342,18 @@
     display: var(--show-lyrics-background);
 }
 
+.main-shuffleButton-button[disabled],
+.main-repeatButton-button[disabled] {
+    display: none;
+}
+
 .main-shuffleButton-button, .main-shuffleButton-button:focus:not(:focus-visible):not(:hover),
 .main-skipBackButton-button, .main-skipBackButton-button:focus:not(:focus-visible):not(:hover),
 .main-skipForwardButton-button, .main-skipForwardButton-button:focus:not(:focus-visible):not(:hover),
 .main-repeatButton-button, .main-repeatButton-button:focus:not(:focus-visible):not(:hover),
-.control-button:not(.control-button--active), .control-button:focus,
-.main-addButton-button,
+.control-button:not(.control-button--active):not(.main-addButton-active), .control-button:focus,
+.Button-sc-1dqy6lx-0.dgwCXe,
+/* .main-addButton-button, */
 .main-playPauseButton-button svg {
     color: var(--spice-button);
 }
@@ -328,14 +376,22 @@
 .main-skipBackButton-button:hover,
 .main-skipForwardButton-button:hover,
 .main-repeatButton-button:hover, .main-repeatButton-button.main-repeatButton-active, .main-repeatButton-button.main-repeatButton-active:not([disabled]):focus:not(:focus-visible):not(:hover),
-.control-button:hover, .control-button--active,
-.spoticon-devices-16.control-button--active,
+.main-connectPicker-button .control-button:hover, .control-button--active,
+.control-button:hover:not(.control-button--active):not(.main-addButton-active),
+.main-genericButton-button.main-genericButton-buttonActive,
+/* .spoticon-devices-16.control-button--active, */
 .main-addButton-active,.main-addButton-active:focus,.main-addButton-active:hover,
+.Button-sc-1dqy6lx-0.dgwCXe:hover,
 .main-playPauseButton-button:hover svg,
 .main-playPauseButton-button:active svg {
     color: var(--spice-button-active);
 }
 
+.Button-sc-1dqy6lx-0.dgwCXe:hover {
+    transform: none;
+}
+
+.main-genericButton-button.main-genericButton-buttonActive::after,
 .progress-bar--is-active .progress-bar__fg,
 .progress-bar--is-active .progress-bar__slider,
 .control-button--active-dot:after {
