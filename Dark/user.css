@@ -343,7 +343,8 @@
 }
 
 .main-shuffleButton-button[disabled],
-.main-repeatButton-button[disabled] {
+.main-repeatButton-button[disabled],
+.control-button[aria-label="Full screen"] {
     display: none;
 }
 
