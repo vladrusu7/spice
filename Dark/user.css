@@ -183,6 +183,11 @@
     background: rgba(0, 0, 0, 0.6);
 }
 
+.main-trackList-trackListRow.main-trackList-active:not(.main-trackList-selected):not(:hover):not(:focus-within) {
+    background: rgba(var(--spice-rgb-button-active), 0.4);
+    /* border: rgba(var(--spice-rgb-button-active), 0.4) solid; */
+}
+
 /* player */
 
 .Root__now-playing-bar {
@@ -334,12 +339,18 @@
 .lyrics-lyrics-container {
     --lyrics-color-active: var(--spice-text) !important;
 }
+.lyrics-lyrics-contentContainer {
+    padding-bottom: 150px;
+}
 .lyrics-lyrics-contentContainer .lyrics-lyricsContent-lyric:not(.lyrics-lyricsContent-highlight):not(.lyrics-lyricsContent-active) {
     color: var(--spice-text) !important;
     opacity: 0.3;
 }
 .lyrics-lyrics-container .lyrics-lyrics-background {
     display: var(--show-lyrics-background);
+}
+.lyrics-lyrics-contentContainer .lyrics-lyrics-contentWrapper {
+	font-size: 1.5rem;
 }
 
 .main-shuffleButton-button[disabled],
@@ -353,7 +364,7 @@
 .main-skipForwardButton-button, .main-skipForwardButton-button:focus:not(:focus-visible):not(:hover),
 .main-repeatButton-button, .main-repeatButton-button:focus:not(:focus-visible):not(:hover),
 .control-button:not(.control-button--active):not(.main-addButton-active), .control-button:focus,
-.Button-sc-1dqy6lx-0.dgwCXe,
+.Button-sc-1dqy6lx-0,
 /* .main-addButton-button, */
 .main-playPauseButton-button svg {
     color: var(--spice-button);
@@ -382,7 +393,7 @@
 .main-genericButton-button.main-genericButton-buttonActive,
 /* .spoticon-devices-16.control-button--active, */
 .main-addButton-active,.main-addButton-active:focus,.main-addButton-active:hover,
-.Button-sc-1dqy6lx-0.dgwCXe:hover,
+.Button-sc-1dqy6lx-0:hover, .Button-sc-1dqy6lx-0:active:hover,
 .main-playPauseButton-button:hover svg,
 .main-playPauseButton-button:active svg {
     color: var(--spice-button-active);
@@ -404,7 +415,9 @@
 .main-skipForwardButton-button:active,
 .main-repeatButton-button:active,
 .control-button:focus:active, .control-button:hover:active, .control-button--active:not(.control-button--disabled):active:focus, .control-button--active:not(.control-button--disabled):active:hover,
+.Button-sc-1dqy6lx-0:active,
 .main-playPauseButton-button:active {
     transform: scale(0.9);
     color: var(--spice-button-active);
+    opacity: 1;
 }
