@@ -8,32 +8,47 @@
 }
 
 :root {
+    --player-height: 100px;
+    --player-border-radius: 7px;
+    --player-album-cover-size: 64px;
     --show-lyrics-background: none; /* none / block */
+    --general-border-radius: 7px;
+    --album-covers-border-radius: 0px;
 }
-
+/* hide premium shit */
 .main-leaderboardComponent-container,
 .main-billboardComponent-footer,
 .main-topBar-UpgradeButton,
 .main-contextMenu-menuItemButton[href*="premium"] {
   display: none;
 }
+/* hide premium shit */
 
+/* padding ca sa pot sa dau scroll mai sus de bara de player */
 .main-view-container__scroll-node-child {
     padding-bottom: 150px;
 }
-
-.main-entityHeader-backgroundColor,
-.main-actionBarBackground-background,
-.main-topBar-overlay {
-    background: transparent !important;
-}
+/* padding ca sa pot sa dau scroll mai sus de bara de player */
 
 /* top bar */
 .main-topBar-background {
     background: var(--spice-main) !important;
+    border-radius: 0;
 }
 
-.main-userWidget-box,
+.main-userWidget-boxCondensed {
+    background: none !important;
+}
+.main-userWidget-boxCondensed:hover,
+.main-userWidget-boxCondensed:active,
+.main-userWidget-boxCondensed[data-context-menu-open="true"] {
+    background-color: rgba(var(--spice-rgb-shadow),.7) !important;
+    color: var(--spice-button-active);
+    opacity: 1;
+}
+
+.main-userWidget-boxCondensed,
+.main-topBar-buddyFeed,
 .main-topBar-historyButtons .main-topBar-button {
     background: none;
     color: var(--spice-button);
@@ -41,8 +56,8 @@
 
 .main-topBar-historyButtons .main-topBar-button:hover:not([disabled]),
 .main-topBar-historyButtons .main-topBar-button:active:not([disabled]),
-.main-userWidget-box:hover,
-.main-userWidget-box[data-context-menu-open="true"] {
+.main-topBar-buddyFeed:hover,
+.main-topBar-buddyFeed:active {
     background-color: rgba(var(--spice-rgb-shadow),.7);
     color: var(--spice-button-active);
 }
@@ -51,9 +66,25 @@
     color: var(--spice-button-active);
 }
 
-.main-topBar-historyButtons .main-topBar-button:active:not([disabled]) {
-    transform: scale(0.9);
+.main-topBar-historyButtons .main-topBar-button:active:not([disabled]),
+.main-userWidget-boxCondensed:active,
+.main-topBar-buddyFeed:active {
+    transform: scale(0.95);
 }
+
+/* home */
+.Root__main-view {
+    border-radius: 0;
+}
+/* .main-home-homeHeader {
+    background: none !important;
+} */
+
+.main-card-imageContainer .main-cardImage-imageWrapper,
+.main-card-imageContainer .main-cardImage-imageWrapper .main-cardImage-image {
+    border-radius: var(--album-covers-border-radius);
+}
+/* home */
 
 /* popouts */
 .main-contextMenu-menuItemButton {
@@ -65,28 +96,32 @@
 
 /* sidebar */
 .main-collectionLinkButton-collectionLinkButton, .main-createPlaylistButton-button,
-.main-navBar-navBarItem .main-navBar-navBarLink {
+.main-yourLibraryX-navItem .main-yourLibraryX-navLink {
     color: var(--spice-button);
 }
-.main-collectionLinkButton-collectionLinkButton:hover, .main-createPlaylistButton-button:hover,
-.main-rootlist-playButton svg,
-.main-rootlist-rootlistItemOverlay:hover~.main-rootlist-rootlistItemLink,
+/* .main-collectionLinkButton-collectionLinkButton:hover, .main-createPlaylistButton-button:hover,
+.main-rootlist-playButton svg, */
+/* .main-rootlist-rootlistItemOverlay:hover~.main-rootlist-rootlistItemLink,
 .main-rootlist-rootlistItemLink.main-rootlist-rootlistItemLinkActive,
 .main-rootlist-rootlistItemLink:focus,
-.main-rootlist-rootlistItemLink:hover,
-.main-navBar-navBarItem:hover .main-navBar-navBarLink,
-.main-navBar-navBarItem:hover .main-navBar-navBarLink svg,
-.main-navBar-navBarItem .main-navBar-navBarLink.main-navBar-navBarLinkActive,
-.main-navBar-navBarItem .main-navBar-navBarLink.main-navBar-navBarLinkActive svg {
+.main-rootlist-rootlistItemLink:hover, */
+.main-yourLibraryX-navItem:hover .main-yourLibraryX-navLink,
+.main-yourLibraryX-navLink:hover .main-yourLibraryX-navLink svg,
+.main-yourLibraryX-navItem .main-yourLibraryX-navLink.main-yourLibraryX-navLinkActive,
+.main-yourLibraryX-navItem .main-yourLibraryX-navLink.main-yourLibraryX-navLinkActive svg {
     color: var(--spice-button-active);
 }
-.main-rootlist-rootlistDividerContainer {
+/* .main-rootlist-rootlistDividerContainer {
+    display: none;
+} */
+
+.main-useDropTarget-base .main-yourLibraryX-listItemGroup::after {
     display: none;
 }
 
 .main-rootlist-rootlistItem,
-.main-navBar-navBarItem,
-.GlueDropTarget.personal-library {
+.main-yourLibraryX-navItem,
+.main-useDropTarget-base .main-yourLibraryX-listItemGroup {
     background-image: 
         /* linear-gradient(90deg,
                         transparent 50%,
@@ -103,11 +138,12 @@
     background-position: center right;
     background-size: 200% 100%;
     transition: all .4s ease;
+    border-radius: var(--general-border-radius);
 }
 
 .main-rootlist-rootlistItem:hover,
-.main-navBar-navBarItem:hover,
-.GlueDropTarget.personal-library:hover {
+.main-yourLibraryX-navItem:hover,
+.main-useDropTarget-base .main-yourLibraryX-listItemGroup:hover {
     /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0) 0%); */
     background-position: center left;
 }
@@ -126,6 +162,12 @@
 .main-playButton-PlayButton.main-playButton-primary:hover {
     color: var(--spice-button-active);
 } */
+
+.playlist-playlist-playlistImageContainer .main-entityHeader-image,
+.playlist-playlist-playlistImageContainer .main-editImage-buttonContainer,
+.main-trackList-trackListRow .main-trackList-rowSectionStart .main-trackList-rowImage {
+    border-radius: var(--album-covers-border-radius);
+}
 
 .main-trackList-trackListRow:not(.main-trackList-selected) .main-trackList-rowTitle,
 .main-trackList-trackListRow:not(.main-trackList-selected) .main-trackList-rowSectionVariable a,
@@ -173,6 +215,7 @@
 .main-trackList-trackListRow {
     background: rgba(0, 0, 0, 0);
     transition: background .3s ease;
+    border-radius: var(--general-border-radius);
 }
 
 .main-trackList-trackListRow:focus-within,
@@ -186,15 +229,14 @@
 .main-trackList-trackListRow.main-trackList-active:not(.main-trackList-selected):not(:hover):not(:focus-within) {
     background: rgba(var(--spice-rgb-button-active), 0.4);
     /* border: rgba(var(--spice-rgb-button-active), 0.4) solid; */
+    border-radius: var(--general-border-radius);
 }
 
 /* player */
 
 .Root__now-playing-bar {
     /* box-shadow: 0px -15px 100px rgba(0,0,0,0.3); */
-    border-radius: 10px;
-    /* background: rgba(0,0,0,0.4); */
-    /* backdrop-filter: blur(5px); */
+    border-radius: var(--player-border-radius);
     width: 750px;
     /* height: 50%; */
     position: fixed;
@@ -206,7 +248,7 @@
 
 .Root__now-playing-bar::before {
     content: "";
-    /* border-radius: 10px; */
+    border-radius: var(--player-border-radius);
     background: rgba(0,0,0,0.4);
     backdrop-filter: blur(5px);
     position: absolute;
@@ -220,26 +262,36 @@
     border: none;
 }
 
-/* .main-coverSlotCollapsed-container,
-.main-nowPlayingWidget-coverArt */
-.cover-art.shadow {
-    /* display: none; */
-    width: 40px !important;
-    height: 40px !important;
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar {
+    position: relative;
+    height: var(--player-height);
+    padding: 0 15px;
+    margin: 0;
 }
 
-/* .main-trackInfo-container {
-    margin: 0;
-} */
-.main-coverSlotCollapsed-expandButton {
-    display: none;
+.main-nowPlayingBar-left .main-coverSlotCollapsed-navAltContainer {
+    transform: none;
+    border-radius: var(--album-covers-border-radius);
 }
+
+.cover-art.shadow,
+.main-nowPlayingWidget-coverArt .cover-art {
+    /* display: none; */
+    width: var(--player-album-cover-size) !important;
+    height: var(--player-album-cover-size) !important;
+}
+
+
+
+/* .main-coverSlotCollapsed-expandButton {
+    display: none;
+} */
 
 .main-nowPlayingWidget-nowPlaying .main-addButton-button {
     display: none;
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: var(--player-album-cover-size);
+    height: var(--player-album-cover-size);
     background: rgba(0, 0, 0, 0.6);
 }
 
@@ -248,44 +300,46 @@
 }
 
 .volume-bar {
-    display: flex;
-    flex: 0;
+    /* display: flex;
     flex-direction: column-reverse;
-    position: relative;
     width: 100%;
-    overflow: visible;
-}
-
-.volume-bar .playback-progressbar {
+    overflow: visible; */
     position: relative;
-    display: none;
-    transform: rotate(-90deg);
-    height: 0;
-    width: 300%;
-    bottom: 50px;
+    margin: 0;
+    flex: 0;
 }
 
-.volume-bar .playback-progressbar::before {
+.volume-bar .volume-bar__slider-container {
+    position: absolute;
+    display: none;
+    width: 150px;
+    right: -150px;
+}
+
+.volume-bar .volume-bar__slider-container::before {
     content: "";
     position: absolute;
     background: rgba(0,0,0,0.2);
     backdrop-filter: blur(5px);
     display: none;
-    height: 50px;
-    width: 110px;
+    height: calc(100% + 30px);
+    width: calc(100% + 20px);
     margin-left: -10px;
-    margin-top: -25px;
+    transform: translate(0, -50%);
+    top: 50%;
 }
 
-.volume-bar:hover .playback-progressbar {
+.volume-bar:hover .volume-bar__slider-container {
     display: block;
 }
 
-.volume-bar:hover .playback-progressbar:before {
+.volume-bar:hover .volume-bar__slider-container:before {
     display: block;
 }
 
 .player-controls .playback-progressbar {
+    width: 100%;
+    height: 100%;
     z-index: 10;
 }
 .main-nowPlayingBar-left,
@@ -296,13 +350,14 @@
     z-index: 11;
 }
 
-.player-controls .playback-progressbar {
+.player-controls .playback-bar {
     position: absolute;
+    left: 0;
     right: 0;
-    top: 0;
     width: 100%;
     height: 100%;
 }
+
 .player-controls .playback-progressbar .progress-bar {
     --progress-bar-height: 100%;
     --progress-bar-radius: 0px;
@@ -310,6 +365,9 @@
     --fg-color: var(--spice-button-active);
     opacity: 0.3;
     /* backdrop-filter: blur(5px); */
+}
+.x-progressBar-progressBarBg, .x-progressBar-sliderArea {
+    border-radius: var(--player-border-radius);
 }
 .player-controls .playback-progressbar .epWhU7hHGktzlO_dop6z {
     transform: translateX(calc(-100.06% + var(--progress-bar-transform)));
@@ -324,7 +382,7 @@
 }
 
 .player-controls .playback-bar__progress-time-elapsed {
-    top: 37px;
+    /* top: 37px; */
     right: 220px;
 }
 .player-controls .playback-bar__progress-time-elapsed::after {
@@ -332,7 +390,7 @@
     margin-left: 5px;
 }
 .player-controls .main-playbackBarRemainingTime-container {
-    top: 37px;
+    /* top: 37px; */
     right: 190px;
 }
 
@@ -359,17 +417,6 @@
     display: none;
 }
 
-.main-shuffleButton-button, .main-shuffleButton-button:focus:not(:focus-visible):not(:hover),
-.main-skipBackButton-button, .main-skipBackButton-button:focus:not(:focus-visible):not(:hover),
-.main-skipForwardButton-button, .main-skipForwardButton-button:focus:not(:focus-visible):not(:hover),
-.main-repeatButton-button, .main-repeatButton-button:focus:not(:focus-visible):not(:hover),
-.control-button:not(.control-button--active):not(.main-addButton-active), .control-button:focus,
-.Button-sc-1dqy6lx-0,
-/* .main-addButton-button, */
-.main-playPauseButton-button svg {
-    color: var(--spice-button);
-}
-
 .player-controls__buttons {
     margin-bottom: 0px;
 }
@@ -381,19 +428,31 @@
 
 .player-controls__buttons button:not(.main-playPauseButton-button) {
     /* --button-size: 50px !important; */
-    height: unset;
+    width: 16px;
+    min-width: unset;
+    height: 16px;
+    margin: auto 5px;
+}
+
+.main-shuffleButton-button, .main-shuffleButton-button:focus:not(:focus-visible,:hover,:active),
+.main-skipBackButton-button, .main-skipBackButton-button:focus:not(:focus-visible,:hover,:active),
+.main-skipForwardButton-button, .main-skipForwardButton-button:focus:not(:focus-visible,:hover,:active),
+.main-repeatButton-button, .main-repeatButton-button:focus:not(:focus-visible,:hover,:active),
+.control-button:not(.control-button--active):not(.main-addButton-active), .control-button:focus,
+.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0,
+/* .main-addButton-button, */
+.main-playPauseButton-button svg {
+    color: var(--spice-button);
 }
 
 .main-shuffleButton-button:hover, .main-shuffleButton-button.main-shuffleButton-active, .main-shuffleButton-button.main-shuffleButton-active:not([disabled]):focus:not(:focus-visible):not(:hover),
 .main-skipBackButton-button:hover,
 .main-skipForwardButton-button:hover,
 .main-repeatButton-button:hover, .main-repeatButton-button.main-repeatButton-active, .main-repeatButton-button.main-repeatButton-active:not([disabled]):focus:not(:focus-visible):not(:hover),
-.main-connectPicker-button .control-button:hover, .control-button--active,
 .control-button:hover:not(.control-button--active):not(.main-addButton-active),
 .main-genericButton-button.main-genericButton-buttonActive,
-/* .spoticon-devices-16.control-button--active, */
 .main-addButton-active,.main-addButton-active:focus,.main-addButton-active:hover,
-.Button-sc-1dqy6lx-0:hover, .Button-sc-1dqy6lx-0:active:hover,
+.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:hover, .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active:hover,
 .main-playPauseButton-button:hover svg,
 .main-playPauseButton-button:active svg {
     color: var(--spice-button-active);
@@ -403,21 +462,20 @@
     transform: none;
 }
 
-.main-genericButton-button.main-genericButton-buttonActive::after,
-.progress-bar--is-active .progress-bar__fg,
-.progress-bar--is-active .progress-bar__slider,
-.control-button--active-dot:after {
+.main-genericButton-button.main-genericButton-buttonActive::after {
+/* .progress-bar--is-active .progress-bar__fg,
+.progress-bar--is-active .progress-bar__slider { */
     background: var(--spice-button-active);
 }
 
-.main-shuffleButton-button:active,
-.main-skipBackButton-button:active,
-.main-skipForwardButton-button:active,
-.main-repeatButton-button:active,
-.control-button:focus:active, .control-button:hover:active, .control-button--active:not(.control-button--disabled):active:focus, .control-button--active:not(.control-button--disabled):active:hover,
-.Button-sc-1dqy6lx-0:active,
+.main-shuffleButton-button:active, .main-shuffleButton-button:active:focus,
+.main-skipBackButton-button:active, .main-skipBackButton-button:active:focus,
+.main-skipForwardButton-button:active, .main-skipForwardButton-button:active:focus,
+.main-repeatButton-button:active, .main-repeatButton-button:active:focus,
+.main-nowPlayingBar-extraControls .control-button:focus:active, .main-nowPlayingBar-extraControls .control-button:hover:active, .main-nowPlayingBar-extraControls .control-button:active,
+.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active,
 .main-playPauseButton-button:active {
-    transform: scale(0.9);
+    transform: scale(0.95);
     color: var(--spice-button-active);
     opacity: 1;
 }
