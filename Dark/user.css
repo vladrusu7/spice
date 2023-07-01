@@ -30,6 +30,11 @@
 }
 /* padding ca sa pot sa dau scroll mai sus de bara de player */
 
+.Root__top-container {
+    gap: 0;
+    padding: 0;
+}
+
 /* top bar */
 .main-topBar-background {
     background: var(--spice-main) !important;
@@ -93,6 +98,54 @@
 /* .main-entityHeader-container.main-entityHeader-nonWrapped {
     min-height: 280px;
 } */
+/* popouts */
+
+/* notification toast */
+.Root__main-view-overlay {
+    margin: 0;
+}
+
+.main-notificationBubbleContainer-NotificationBubbleContainer {
+    margin: 0;
+    place-self: unset;
+    position: absolute;
+    top: 100px;
+    right: 30px;
+}
+
+.main-notificationBubble-NotificationBubble {
+    border-radius: var(--general-border-radius);
+    transition: none;
+}
+
+.main-notificationBubble-enter {
+    opacity: 1;
+    pointer-events: none;
+    animation: flyout .5s linear;
+}
+
+.main-notificationBubble-enterActive {
+    opacity: 1;
+}
+
+.main-notificationBubble-exit {
+    animation: flyin .5s linear forwards;
+    opacity: 1;
+}
+
+.main-notificationBubble-exitActive {
+    opacity: 1;
+}
+
+@keyframes flyout {
+    from {transform: translateX(calc(100% + 20px));}
+    to {transform: translateX(0%);}
+}
+@keyframes flyin {
+    from {transform: translateX(0%);}
+    to {transform: translateX(calc(100% + 20px));}
+}
+/* notification toast */
 
 /* sidebar */
 .main-collectionLinkButton-collectionLinkButton, .main-createPlaylistButton-button,
