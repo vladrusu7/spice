@@ -340,17 +340,37 @@
     display: none;
 } */
 
-.main-nowPlayingWidget-nowPlaying .main-addButton-button {
+.main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .control-button-heart {
     display: none;
     position: absolute;
+    border-radius: 0;
     width: var(--player-album-cover-size);
     height: var(--player-album-cover-size);
     background: rgba(0, 0, 0, 0.6);
+    transform: none;
 }
 
-.main-nowPlayingWidget-nowPlaying:hover .main-addButton-button {
-    display: block;
+.main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying:hover .control-button-heart {
+    display: flex;
 }
+
+.main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-coverSlotCollapsed-expandButton {
+    display: none;
+}
+
+.main-nowPlayingBar-center {
+    max-width: unset;
+    width: auto;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+}
+
+/* .main-nowPlayingBar-right {
+    min-width: unset;
+    width: auto;
+} */
 
 .volume-bar {
     /* display: flex;
@@ -437,6 +457,7 @@
 .player-controls .playback-bar__progress-time-elapsed {
     /* top: 37px; */
     right: 220px;
+    /* right: -40px; */
 }
 .player-controls .playback-bar__progress-time-elapsed::after {
     content: "/";
@@ -445,6 +466,7 @@
 .player-controls .main-playbackBarRemainingTime-container {
     /* top: 37px; */
     right: 190px;
+    /* right: -65px; */
 }
 
 .lyrics-lyrics-container {
