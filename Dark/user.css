@@ -33,6 +33,11 @@
 .Root__top-container {
     gap: 0;
     padding: 0;
+    background: var(--spice-main);
+}
+
+.Root__main-view-overlay {
+    margin: 0 !important;
 }
 
 /* top bar */
@@ -101,10 +106,6 @@
 /* popouts */
 
 /* notification toast */
-.Root__main-view-overlay {
-    margin: 0;
-}
-
 .main-notificationBubbleContainer-NotificationBubbleContainer {
     margin: 0;
     place-self: unset;
@@ -148,6 +149,13 @@
 /* notification toast */
 
 /* sidebar */
+.main-navBar-mainNav {
+    gap: 0;
+}
+.main-yourLibraryX-entryPoints {
+    border-radius: 0;
+}
+
 .main-collectionLinkButton-collectionLinkButton, .main-createPlaylistButton-button,
 .main-yourLibraryX-navItem .main-yourLibraryX-navLink {
     color: var(--spice-button);
@@ -215,6 +223,15 @@
 .main-playButton-PlayButton.main-playButton-primary:hover {
     color: var(--spice-button-active);
 } */
+
+.main-topBar-overlay,
+.main-topBar-topbarContent .main-playButton-PlayButton {
+    display: none;
+}
+
+.main-trackList-trackListHeaderStuck.main-trackList-trackListHeader {
+    background: var(--spice-main);
+}
 
 .playlist-playlist-playlistImageContainer .main-entityHeader-image,
 .playlist-playlist-playlistImageContainer .main-editImage-buttonContainer,
@@ -471,6 +488,7 @@
 
 .lyrics-lyrics-container {
     --lyrics-color-active: var(--spice-text) !important;
+    padding-top: 0;
 }
 .lyrics-lyrics-contentContainer {
     padding-bottom: 150px;
@@ -484,6 +502,10 @@
 }
 .lyrics-lyrics-contentContainer .lyrics-lyrics-contentWrapper {
 	font-size: 1.5rem;
+}
+.lyrics-lyricsContent-provider p {
+    color: var(--spice-text);
+    opacity: 0.3;
 }
 
 .main-shuffleButton-button[disabled],
