@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://takosthings.github.io/Fluent-Discord-Fonts/segoeui.ttf');
+
+* {
+	/* font-family: 'Roboto', sans-serif !important; */
+    font-family: "Segoe UI" !important;
+    /* font-weight: 400; */
+}
+
+:root {
+    --player-height: 100px;
+    --player-border-radius: 7px;
+    --player-album-cover-size: 64px;
+    --show-lyrics-background: none; /* none / block */
+    --general-border-radius: 7px;
+    --album-covers-border-radius: 0px;
+}
 /* hide premium shit */
 .main-leaderboardComponent-container,
 .main-billboardComponent-footer,
