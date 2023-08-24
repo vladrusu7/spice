@@ -7,14 +7,14 @@
     /* font-weight: 400; */
 }
 
-:root {
+/* :root {
     --player-height: 100px;
     --player-border-radius: 7px;
     --player-album-cover-size: 64px;
     --show-lyrics-background: none; /* none / block */
-    --general-border-radius: 7px;
+    /* --general-border-radius: 7px;
     --album-covers-border-radius: 0px;
-}
+} */
 /* hide premium shit */
 .main-leaderboardComponent-container,
 .main-billboardComponent-footer,
