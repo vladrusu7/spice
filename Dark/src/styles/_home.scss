@@ -1,0 +1,8 @@
+/* .main-home-homeHeader {
+    background: none !important;
+} */
+
+.main-card-imageContainer .main-cardImage-imageWrapper,
+.main-card-imageContainer .main-cardImage-imageWrapper .main-cardImage-image {
+    border-radius: var(--album-covers-border-radius);
+}

@@ -1,0 +1,269 @@
+.Root__now-playing-bar {
+    /* box-shadow: 0px -15px 100px rgba(0,0,0,0.3); */
+    border-radius: var(--player-border-radius);
+    width: 750px;
+    /* height: 50%; */
+    position: fixed;
+    bottom: 0;
+    margin: 0px auto 50px;
+    left: 0;
+    right: 0;
+
+    &::before {
+        content: "";
+        border-radius: var(--player-border-radius);
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(5px);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -21;
+    }
+}
+
+.main-nowPlayingBar-container {
+    background: transparent;
+    border: none;
+
+    .main-nowPlayingBar-nowPlayingBar {
+        position: relative;
+        height: var(--player-height);
+        padding: 0 15px;
+        margin: 0;
+
+        .main-nowPlayingBar-left {
+            .main-coverSlotCollapsed-navAltContainer {
+                transform: none;
+                border-radius: var(--album-covers-border-radius);
+            }
+
+            .main-nowPlayingWidget-coverArt {
+                .cover-art, .cover-art.shadow {
+                    /* display: none; */
+                    width: var(--player-album-cover-size) !important;
+                    height: var(--player-album-cover-size) !important;
+                }
+            }
+
+            .main-nowPlayingWidget-nowPlaying {
+                .control-button-heart {
+                    display: none;
+                    position: absolute;
+                    border-radius: 0;
+                    width: var(--player-album-cover-size);
+                    height: var(--player-album-cover-size);
+                    background: rgba(0, 0, 0, 0.6);
+                    transform: none;
+                }
+                &:hover {
+                    .control-button-heart {
+                        display: flex;
+                    }
+                }
+                .main-coverSlotCollapsed-expandButton {
+                    display: none;
+                }
+            }   
+        }
+
+        .main-nowPlayingBar-center {
+            max-width: unset;
+            width: auto;
+            /* position: absolute; */
+            /* top: 50%; */
+            /* left: 50%; */
+            /* transform: translate(-50%, -50%); */       
+            
+            .player-controls {
+                .player-controls__buttons {
+                    margin-bottom: 0px;
+
+                    button:not(.main-playPauseButton-button) {
+                        /* --button-size: 50px !important; */
+                        width: 16px;
+                        min-width: unset;
+                        height: 16px;
+                        margin: auto 5px;
+                    }
+
+                    .main-playPauseButton-button {
+                        --button-size: 50px !important;
+                        background-color: var(--spice-player);
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                    }
+                }
+
+                .playback-bar {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+
+                    .playback-progressbar {
+                        width: 100%;
+                        height: 100%;
+                        z-index: 10;
+
+                        .progress-bar {
+                            --progress-bar-height: 100%;
+                            --progress-bar-radius: 0px;
+                            --bg-color: transparent;
+                            --fg-color: var(--spice-button-active);
+                            opacity: 0.3;
+                            /* backdrop-filter: blur(5px); */
+
+                            .x-progressBar-progressBarBg,
+                            .x-progressBar-sliderArea {
+                                border-radius: var(--player-border-radius);
+                            }
+                        }
+                    }
+
+                    .playback-bar__progress-time-elapsed,
+                    .main-playbackBarRemainingTime-container {
+                        position: absolute;
+                        text-align: unset;
+                        min-width: unset;
+                        color: var(--spice-text);
+                    }
+
+                    .playback-bar__progress-time-elapsed {
+                        /* top: 37px; */
+                        right: 220px;
+                        /* right: -40px; */
+
+                        &::after {
+                            content: "/";
+                            margin-left: 5px;
+                        }
+                    }
+
+                    .main-playbackBarRemainingTime-container {
+                        /* top: 37px; */
+                        right: 195px;
+                        /* right: -65px; */
+                    }
+                }
+            }
+        }
+
+        .main-nowPlayingBar-right {
+            .main-nowPlayingBar-volumeBar {
+                /* display: flex;
+                flex-direction: column-reverse;
+                width: 100%;
+                overflow: visible; */
+                position: relative;
+                margin: 0;
+                flex: 0;
+
+                .x1jWng8HDweDS840aiIA {
+                    position: absolute;
+                    display: none;
+                    width: 150px;
+                    right: -150px;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        background: rgba(0, 0, 0, 0.2);
+                        backdrop-filter: blur(5px);
+                        display: none;
+                        height: calc(100% + 30px);
+                        width: calc(100% + 20px);
+                        margin-left: -10px;
+                        transform: translate(0, -50%);
+                        top: 50%;
+                    }
+                }
+
+                &:hover {
+                    .x1jWng8HDweDS840aiIA,
+                    .x1jWng8HDweDS840aiIA::before {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* .main-nowPlayingBar-right {
+    min-width: unset;
+    width: auto;
+} */
+
+.main-nowPlayingBar-left,
+.main-nowPlayingBar-right,
+.player-controls .player-controls__buttons,
+.playback-bar__progress-time-elapsed,
+.main-playbackBarRemainingTime-container {
+    z-index: 11;
+}
+
+.main-shuffleButton-button[disabled],
+.main-repeatButton-button[disabled],
+.control-button[aria-label="Full screen"] {
+    display: none;
+}
+
+.main-shuffleButton-button,
+.main-shuffleButton-button:focus:not(:focus-visible, :hover, :active),
+.main-skipBackButton-button,
+.main-skipBackButton-button:focus:not(:focus-visible, :hover, :active),
+.main-skipForwardButton-button,
+.main-skipForwardButton-button:focus:not(:focus-visible, :hover, :active),
+.main-repeatButton-button,
+.main-repeatButton-button:focus:not(:focus-visible, :hover, :active),
+.control-button:not(.control-button--active):not(.main-addButton-active),
+.control-button:focus,
+.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0,
+/* .main-addButton-button, */
+.main-playPauseButton-button svg {
+    color: var(--spice-button);
+}
+
+.main-shuffleButton-button:hover,
+.main-shuffleButton-button.main-shuffleButton-active,
+.main-shuffleButton-button.main-shuffleButton-active:not([disabled]):focus:not(:focus-visible):not(:hover),
+.main-skipBackButton-button:hover,
+.main-skipForwardButton-button:hover,
+.main-repeatButton-button:hover,
+.main-repeatButton-button.main-repeatButton-active,
+.main-repeatButton-button.main-repeatButton-active:not([disabled]):focus:not(:focus-visible):not(:hover),
+.control-button:hover:not(.control-button--active):not(.main-addButton-active),
+.main-genericButton-button.main-genericButton-buttonActive,
+.main-addButton-active,
+.main-addButton-active:focus,
+.main-addButton-active:hover,
+.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:hover,
+.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active:hover,
+.main-playPauseButton-button:hover svg,
+.main-playPauseButton-button:active svg {
+    color: var(--spice-button-active);
+}
+
+.main-genericButton-button.main-genericButton-buttonActive::after {
+    /* .progress-bar--is-active .progress-bar__fg,
+.progress-bar--is-active .progress-bar__slider { */
+    background: var(--spice-button-active);
+}
+
+.main-shuffleButton-button:active,
+.main-shuffleButton-button:active:focus,
+.main-skipBackButton-button:active,
+.main-skipBackButton-button:active:focus,
+.main-skipForwardButton-button:active,
+.main-skipForwardButton-button:active:focus,
+.main-repeatButton-button:active,
+.main-repeatButton-button:active:focus,
+.main-nowPlayingBar-extraControls .control-button:focus:active,
+.main-nowPlayingBar-extraControls .control-button:hover:active,
+.main-nowPlayingBar-extraControls .control-button:active,
+.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active,
+.main-playPauseButton-button:active {
+    transform: scale(0.95);
+    color: var(--spice-button-active);
+    opacity: 1;
+}

@@ -1,0 +1,26 @@
+.lyrics-lyrics-container {
+    --lyrics-color-active: var(--spice-text) !important;
+    padding-top: 0;
+
+    .lyrics-lyrics-background {
+        display: var(--show-lyrics-background);
+    }
+
+    .lyrics-lyrics-contentContainer {
+        padding-bottom: 150px;
+
+        .lyrics-lyrics-contentWrapper {
+            font-size: 1.5rem;
+
+            .lyrics-lyricsContent-provider p {
+                color: var(--spice-text);
+                opacity: 0.3;
+            }
+        }
+
+        .lyrics-lyricsContent-lyric:not(.lyrics-lyricsContent-highlight):not(.lyrics-lyricsContent-active) {
+            color: var(--spice-text) !important;
+            opacity: 0.3;
+        }
+    }
+}

@@ -1,10 +1,1 @@
 @import url('https://vladrusu7.github.io/spice/Dark/dev/user.css');
-
-:root {
-    --player-height: 100px;
-    --player-border-radius: 7px;
-    --player-album-cover-size: 64px;
-    --show-lyrics-background: none; /* none / block */
-    --general-border-radius: 7px;
-    --album-covers-border-radius: 0px;
-}

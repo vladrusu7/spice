@@ -1,0 +1,60 @@
+:root {
+    --player-height: 100px;
+    --player-border-radius: 0px;
+    --player-album-cover-size: 64px;
+    --show-lyrics-background: none; /* none / block */
+    --panel-border-radius: 0px;
+    --panel-margin: 0px;
+    --highlight-border-radius: 8px;
+    --album-covers-border-radius: 0px;
+    --highlight-background: rgba(var(--spice-rgb-highlight), 0.6);
+}
+
+* {
+	/* font-family: 'Roboto', sans-serif !important; */
+    font-family: "Segoe UI" !important;
+    /* font-weight: 400; */
+}
+
+/* hide premium shit */
+.main-leaderboardComponent-container,
+.main-billboardComponent-footer,
+.main-topBar-UpgradeButton,
+.main-contextMenu-menuItemButton[href*="premium"] {
+  display: none;
+}
+/* hide premium shit */
+
+/* padding ca sa pot sa dau scroll mai sus de bara de player */
+.main-view-container__scroll-node-child {
+    padding-bottom: 150px;
+}
+/* padding ca sa pot sa dau scroll mai sus de bara de player */
+
+/* scot divider-u dintre top bar si main view */
+.main-view-container__scroll-node-child-spacer {
+    display: none;
+}
+/* scot divider-u dintre top bar si main view */
+
+.Root__main-view-overlay {
+    margin: 0 !important;
+}
+
+.Root__top-container {
+    gap: 0;
+    padding: 0;
+    background: var(--spice-backdrop);
+
+    grid-template-areas:
+        "top-bar top-bar top-bar"
+        "left-sidebar main-view right-sidebar"
+        "now-playing-bar now-playing-bar now-playing-bar";
+    grid-template-rows: auto 1fr auto;
+
+    .Root__main-view {
+        width: revert;
+        margin: var(--panel-margin) var(--panel-margin) var(--panel-margin) 0;
+        border-radius: var(--panel-border-radius);
+    }
+}

@@ -9,11 +9,12 @@
 
 :root {
     --player-height: 100px;
-    --player-border-radius: 7px;
+    --player-border-radius: 0px;
     --player-album-cover-size: 64px;
     --show-lyrics-background: none; /* none / block */
-    --general-border-radius: 7px;
+    --general-border-radius: 0px;
     --album-covers-border-radius: 0px;
+    --highlight-background: rgba(var(--spice-rgb-highlight), 0.6);
 }
 /* hide premium shit */
 .main-leaderboardComponent-container,
@@ -30,20 +31,54 @@
 }
 /* padding ca sa pot sa dau scroll mai sus de bara de player */
 
-.Root__top-container {
-    gap: 0;
-    padding: 0;
-    background: var(--spice-main);
+/* scot divider-u dintre top bar si main view */
+.main-view-container__scroll-node-child-spacer {
+    display: none;
 }
+/* scot divider-u dintre top bar si main view */
 
 .Root__main-view-overlay {
     margin: 0 !important;
 }
 
 /* top bar */
+.Root__top-container {
+    gap: 0;
+    padding: 0;
+    background: var(--spice-main);
+
+    grid-template-areas:
+        "top-bar top-bar top-bar"
+        "left-sidebar main-view right-sidebar"
+        "now-playing-bar now-playing-bar now-playing-bar";
+    grid-template-rows: auto 1fr auto;
+}
+
+.Root__top-bar {
+    /* position: fixed; */
+    width: 100%;
+    height: 48px;
+
+    grid-area: top-bar !important;
+}
+
+.main-topBar-container {
+    /* gap: 0;
+    padding: 0; */
+    height: 48px;
+}
+
 .main-topBar-background {
     background: var(--spice-main) !important;
     border-radius: 0;
+}
+
+.main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-entityHeader-topbarTitle {
+    margin: 0 auto;
+}
+
+.Root__nav-bar {
+    z-index: unset;
 }
 
 .main-userWidget-boxCondensed {
@@ -52,7 +87,8 @@
 .main-userWidget-boxCondensed:hover,
 .main-userWidget-boxCondensed:active,
 .main-userWidget-boxCondensed[data-context-menu-open="true"] {
-    background-color: rgba(var(--spice-rgb-shadow),.7) !important;
+    /* background-color: rgba(var(--spice-rgb-shadow),.7) !important; */
+    background-color: var(--highlight-background) !important;
     color: var(--spice-button-active);
     opacity: 1;
 }
@@ -68,7 +104,8 @@
 .main-topBar-historyButtons .main-topBar-button:active:not([disabled]),
 .main-topBar-buddyFeed:hover,
 .main-topBar-buddyFeed:active {
-    background-color: rgba(var(--spice-rgb-shadow),.7);
+    /* background-color: rgba(var(--spice-rgb-shadow),.7); */
+    background-color: var(--highlight-background);
     color: var(--spice-button-active);
 }
 .main-topBar-historyButtons .main-topBar-button:hover:not([disabled]) .main-topBar-icon,
@@ -154,6 +191,17 @@
 }
 .main-yourLibraryX-entryPoints {
     border-radius: 0;
+    /* width: fit-content;
+    margin: 0 auto; */
+}
+
+.main-yourLibraryX-entryPoints:not(.main-yourLibraryX-library) {
+    position: absolute;
+    top: -48px;
+    width: fit-content;
+    height: 48px;
+    /* margin: 0 auto; */
+    margin-left: calc(var(--content-spacing) + 8px + 64px + 8px);
 }
 
 .main-collectionLinkButton-collectionLinkButton, .main-createPlaylistButton-button,
@@ -171,6 +219,31 @@
 .main-yourLibraryX-navItem .main-yourLibraryX-navLink.main-yourLibraryX-navLinkActive,
 .main-yourLibraryX-navItem .main-yourLibraryX-navLink.main-yourLibraryX-navLinkActive svg {
     color: var(--spice-button-active);
+}
+
+.main-yourLibraryX-navItems {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    height: 100%;
+    align-items: center;
+    /* padding: 8px 0px; */
+    padding: 0;
+    gap: 8px;
+    z-index: 6;
+}
+
+.main-yourLibraryX-navItems .main-yourLibraryX-navItem {
+    padding: 0;
+}
+
+.main-yourLibraryX-navItems .main-yourLibraryX-navLink {
+    height: 24px;
+    width: 24px;
+}
+
+.main-yourLibraryX-navItem .Type__TypeElement-sc-goli3j-0 {
+    display: none;
 }
 /* .main-rootlist-rootlistDividerContainer {
     display: none;
@@ -229,14 +302,37 @@
     display: none;
 }
 
-.main-trackList-trackListHeaderStuck.main-trackList-trackListHeader {
-    background: var(--spice-main);
+.playlist-playlist-playlist {
+    margin: 0;
 }
 
-.playlist-playlist-playlistImageContainer .main-entityHeader-image,
-.playlist-playlist-playlistImageContainer .main-editImage-buttonContainer,
+.main-entityHeader-container.main-entityHeader-nonWrapped {
+    height: unset;
+    max-height: unset;
+    min-height: unset;
+    padding: var(--content-spacing);
+}
+
+.main-trackList-trackListHeaderStuck.main-trackList-trackListHeader {
+    top: 0 !important;
+    background: var(--spice-main);
+    box-shadow: none;
+}
+
+.playlist-playlist-playlist .main-entityHeader-imageContainer .main-entityHeader-image,
+.playlist-playlist-playlist .main-entityHeader-imageContainer .main-editImage-buttonContainer .main-editImageButton-overlay,
 .main-trackList-trackListRow .main-trackList-rowSectionStart .main-trackList-rowImage {
     border-radius: var(--album-covers-border-radius);
+}
+
+.playlist-playlist-playlist .main-entityHeader-imageContainer {
+    margin-left: auto;
+}
+
+.playlist-playlist-playlist .main-entityHeader-headerText {
+    display: block;
+    flex: none;
+    margin: auto auto auto 0;
 }
 
 .main-trackList-trackListRow:not(.main-trackList-selected) .main-trackList-rowTitle,
@@ -293,7 +389,8 @@
 .main-trackList-trackListRow.main-trackList-selected:hover,
 .main-trackList-trackListRow.main-trackList-selected:focus-within,
 .main-trackList-trackListRow.main-trackList-selected {
-    background: rgba(0, 0, 0, 0.6);
+    /* background: rgba(0, 0, 0, 0.6); */
+    background: var(--highlight-background);
 }
 
 .main-trackList-trackListRow.main-trackList-active:not(.main-trackList-selected):not(:hover):not(:focus-within) {
@@ -301,9 +398,9 @@
     /* border: rgba(var(--spice-rgb-button-active), 0.4) solid; */
     border-radius: var(--general-border-radius);
 }
+/* playlist */
 
 /* player */
-
 .Root__now-playing-bar {
     /* box-shadow: 0px -15px 100px rgba(0,0,0,0.3); */
     border-radius: var(--player-border-radius);
@@ -482,7 +579,7 @@
 }
 .player-controls .main-playbackBarRemainingTime-container {
     /* top: 37px; */
-    right: 190px;
+    right: 195px;
     /* right: -65px; */
 }
 
