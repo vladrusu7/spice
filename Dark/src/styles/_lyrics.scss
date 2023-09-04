@@ -13,14 +13,14 @@
             font-size: 1.5rem;
 
             .lyrics-lyricsContent-provider p {
-                color: var(--spice-text);
-                opacity: 0.3;
+                color: var(--spice-subtext);
+                opacity: 0.4;
             }
         }
 
         .lyrics-lyricsContent-lyric:not(.lyrics-lyricsContent-highlight):not(.lyrics-lyricsContent-active) {
-            color: var(--spice-text) !important;
-            opacity: 0.3;
+            color: var(--spice-subtext) !important;
+            opacity: 0.4;
         }
     }
 }

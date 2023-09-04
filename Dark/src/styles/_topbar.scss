@@ -1,32 +1,23 @@
-%activeHighlight {
-    background: var(--highlight-background);
-    opacity: 1;
-}
-%activeColor {
-    color: var(--spice-button-active);
-}
-%activeTransform{
-    transform: scale(0.95);
-}
+@use 'placeholders';
 
 .Root__top-bar {
     /* position: fixed; */
     // width: 100%;
     height: 48px;
     background: var(--spice-main);
-    margin: var(--panel-margin) var(--panel-margin) 0 var(--panel-margin);
+    margin: 0 var(--panel-margin) 0 var(--panel-margin);
     border-radius: var(--panel-border-radius);
 
     grid-area: top-bar !important;
 
     .main-topBar-container {
-        /* gap: 0;
-        padding: 0; */
+        padding: 0px var(--panel-content-margin-right) 0px var(--panel-content-margin-left);
         height: 48px;
 
         .main-topBar-background {
-            background: var(--spice-main) !important;
-            border-radius: 0;
+            // background: var(--spice-main) !important;
+            // border-radius: 0;
+            display: none;
         }
 
         .main-topBar-historyButtons {
@@ -110,6 +101,7 @@
         .main-userWidget-boxCondensed {
             border-radius: var(--highlight-border-radius);
             transform: none;
+            --background-press: var(--highlight-background);
             
             &:not(:hover, :active, [data-context-menu-open="true"]) {
                 background: none !important;
@@ -119,7 +111,7 @@
                 @extend %activeTransform;
             }
 
-            &:hover,
+            // &:hover,
             &:active,
             &[data-context-menu-open="true"] {
                 // @include activeHighlight;

@@ -1,0 +1,74 @@
+@use 'placeholders';
+
+.Root__main-view {
+    .main-entityHeader-background {
+        &.main-entityHeader-gradient,
+        &.main-entityHeader-overlay {
+            transform: none;
+            // background-position: revert;
+            background-position-x: 50%;
+            background-position-y: 50%;
+            // background-size: 100% auto;
+            height: calc(100vh - 85px - 2 * var(--panel-margin) - var(--panel-content-margin-bottom) - 3px);
+            min-height: unset;
+        }
+
+        &.main-entityHeader-overlay {
+            &::after {
+                content: none;
+            }
+        }
+    }
+
+    .artist-artistOverview-overview {
+        margin: 0;
+
+        .main-entityHeader-container.main-entityHeader-withBackgroundImage {
+            height: calc(100vh - 85px - 2 * var(--panel-margin) - var(--panel-content-margin-bottom) - 3px);
+            max-height: unset;
+            padding: var(--content-spacing);
+
+            .main-entityHeader-headerText {
+                margin: auto 0px;
+            }
+        }
+
+        .artist-artistOverview-artistOverviewContent {
+            background: var(--spice-main);
+
+            .main-actionBarBackground-background {
+                display: none;
+            }
+
+            .main-actionBar-ActionBar {
+                padding-bottom: var(--content-spacing);
+            }
+        }
+    }
+
+    .artist-artistDiscography-topBar {
+        padding: 0px 16px;
+        top: 0;
+
+        .artist-artistDiscography-artistName {
+            display: none;
+        }
+
+        .x-sortBox-sortDropdown {
+            order: 3;
+            margin-left: auto;
+        }
+
+        .artist-artistDiscography-button[aria-label="list"] {
+            order: 1;
+        }
+
+        .artist-artistDiscography-button[aria-label="grid"] {
+            order: 2;
+        }
+    }
+
+    .artist-artistDiscography-tracklist {
+        padding-bottom: 0;
+    }
+}

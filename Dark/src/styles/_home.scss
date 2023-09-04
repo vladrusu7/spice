@@ -1,8 +1,43 @@
-/* .main-home-homeHeader {
-    background: none !important;
-} */
+@use 'placeholders';
+
+.main-home-homeHeader {
+    margin-top: 0;
+}
 
 .main-card-imageContainer .main-cardImage-imageWrapper,
 .main-card-imageContainer .main-cardImage-imageWrapper .main-cardImage-image {
     border-radius: var(--album-covers-border-radius);
+}
+
+.view-homeShortcutsGrid-shortcuts {
+    .view-homeShortcutsGrid-shortcut {
+        background: var(--spice-card);
+
+        &:hover {
+            @extend %activeHighlight;
+
+            .view-homeShortcutsGrid-name a {
+                @extend %activeColor;
+            }
+        }
+    }
+}
+
+.main-shelf-shelf {
+    .main-card-card {
+        background: var(--spice-card);
+
+        &:hover {
+            @extend %activeHighlight;
+
+            .main-cardHeader-text,
+            .main-cardSubHeader-root a:hover {
+                @extend %activeColor;
+            }
+        }
+
+        .main-tag-container {
+            background: var(--spice-subtext);
+        }
+    }
 }

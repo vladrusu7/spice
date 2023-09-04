@@ -1,16 +1,4 @@
-/* .main-entityHeader-headerText,
-.main-entityHeader-metaDataText,
-.main-duration-container {
-    color: var(--spice-subtext);
-}
-.main-playButton-PlayButton.main-playButton-primary {
-    background: var(--spice-main);
-    color: var(--spice-button);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-.main-playButton-PlayButton.main-playButton-primary:hover {
-    color: var(--spice-button-active);
-} */
+@use 'placeholders';
 
 .main-topBar-container {
     .main-topBar-overlay,
@@ -19,14 +7,98 @@
     }
 }
 
-.playlist-playlist-playlist {
+.main-trackList-trackList {
+    .main-trackList-trackListHeader {
+        &.main-trackList-trackListHeaderStuck {
+            top: 0 !important;
+            background: var(--spice-main);
+            box-shadow: none;
+        }
+
+        .main-trackList-rowSectionIndex,
+        .main-trackList-rowSectionVariable[role="columnheader"] .main-trackList-column,
+        .main-trackList-rowSectionVariable[role="columnheader"] .main-trackList-playsHeader,
+        .main-trackList-rowSectionStart[role="columnheader"] .main-trackList-column,
+        .main-trackList-rowSectionEnd[role="columnheader"] .main-trackList-column {
+            @extend %textColor;
+        }
+
+        .main-trackList-rowSectionVariable[role="columnheader"],
+        .main-trackList-rowSectionStart[role="columnheader"],
+        .main-trackList-rowSectionEnd[role="columnheader"] {
+            &:not([aria-sort="none"]) .main-trackList-column.main-trackList-sortable,
+            .main-trackList-column.main-trackList-sortable:hover {
+                @extend %activeColor;
+            }
+        }
+    }
+
+    .main-trackList-trackListRow {
+        background: rgba(0, 0, 0, 0);
+        transition: all .3s ease;
+        border-radius: var(--highlight-border-radius);
+        
+        &:not(.main-trackList-disabled) {
+            &:not(.main-trackList-selected) {
+                .main-trackList-rowMarker,
+                .main-trackList-rowTitle,
+                .main-trackList-rowSubTitle a,
+                .main-trackList-rowSectionVariable a,
+                .main-trackList-rowSectionVariable span,
+                .main-trackList-rowSectionVariable div,
+                .main-trackList-rowDuration,
+                .main-tag-container {
+                    @extend %textColor;
+                }
+            }
+
+            &:hover,
+            &:focus,
+            &:focus-within,
+            &.main-trackList-selected {
+                @extend %activeHighlight;
+
+                .main-trackList-rowImagePlayButton,
+                .main-trackList-rowTitle,
+                .main-trackList-rowSubTitle a,
+                .main-trackList-rowSectionVariable a,
+                .main-trackList-rowSectionVariable span,
+                .main-trackList-rowSectionVariable div,
+                .main-trackList-rowHeartButton,
+                .main-trackList-rowDuration,
+                .main-trackList-rowMoreButton,
+                .main-tag-container {
+                    @extend %activeColor;
+                }
+            }
+
+            &.main-trackList-active:not(.main-trackList-selected, :hover, :focus, :focus-within) {
+                background: rgba(var(--spice-rgb-button-active), 0.4);
+                /* border: rgba(var(--spice-rgb-button-active), 0.4) solid; */
+                border-radius: var(--highlight-border-radius);
+            }
+        }
+
+        .main-tag-container {
+            background: var(--spice-subtext);
+        }
+    }
+}
+
+.playlist-playlist-playlist,
+.album-albumPage-sectionWrapper {
     margin: 0;
 
-    .main-entityHeader-container.main-entityHeader-nonWrapped {
+    .main-entityHeader-container {
         height: unset;
         max-height: unset;
         min-height: unset;
         padding: var(--content-spacing);
+        color: unset;
+
+        .main-entityHeader-backgroundColor {
+            display: var(--playlist-dynamic-background);
+        }
 
         .main-entityHeader-imageContainer {
             margin-left: auto;
@@ -34,84 +106,138 @@
             .main-entityHeader-shadow {
                 box-shadow: 0px 0px 30px rgba(0,0,0,0.3);
             }
+
+            .main-editImageButton-image {
+                background: var(--highlight-background);
+            }
         }
 
         .main-entityHeader-headerText {
             display: block;
             flex: none;
             margin: auto auto auto 0;
+
+            .main-entityHeader-metaDataText,
+            .main-entityHeader-metaDataText .UyzJidwrGk3awngSGIwv {
+                color: unset;
+            }
         }
     }
 
-    .main-trackList-trackListHeaderStuck.main-trackList-trackListHeader {
-        top: 0 !important;
-        background: var(--spice-main);
-        box-shadow: none;
+    .main-actionBarBackground-background {
+        display: var(--playlist-dynamic-background);
+        height: 110px;
+    }
+
+    .main-actionBar-ActionBar {
+        padding-bottom: var(--content-spacing);
+
+        .main-playButton-PlayButton {
+            width: revert;
+            height: revert;
+        }
+        
+        .Button-sc-1dqy6lx-0:not(.I3oc8sxg8Duq4kYUGnMo) {
+            padding-block: revert;
+            min-block-size: revert;
+        }
+
+        .I3oc8sxg8Duq4kYUGnMo,
+        .Button-sc-1dqy6lx-0 {
+            border-radius: var(--highlight-border-radius);
+            border-color: var(--spice-button);
+            color: var(--spice-button);
+            opacity: 1;
+
+            &:hover:not(:active) {
+                transform: none;
+                color: var(--spice-button-active);
+                border-color: var(--spice-button-active);
+            }
+
+            &:active {
+                color:var(--spice-button-active);
+                border-color: var(--spice-button-active);
+                @extend %activeTransform;
+            }
+        }
     }
 }
+
+.playlist-playlist-playlist {
+    .main-actionBar-ActionBar {
+        .x-filterBox-filterInputContainer {
+            // &.x-filterBox-expandedOrHasFilter .x-filterBox-expandButton {
+            //     color:var(--spice-button-active);
+            //     z-index:unset;
+            // }
+
+            .x-filterBox-expandButton {
+                border-radius: var(--highlight-border-radius);
+                color: var(--spice-button);
+                &:hover:not(:active),
+                &:focus {
+                    transform: none;
+                    color: var(--spice-button-active);
+                    background: none;
+                }
+    
+                &:active {
+                    color:var(--spice-button-active);
+                    border-color: var(--spice-button-active);
+                    @extend %activeTransform;
+                }
+            }
+
+            .x-filterBox-searchIconContainer {
+                color: var(--spice-text);
+            }
+            .x-filterBox-filterInput {
+                background: var(--highlight-background);
+                color: var(--spice-text);
+                border-radius: var(--highlight-border-radius);
+
+                &::placeholder {
+                    color: var(--spice-text);
+                }
+            }
+
+            .x-filterBox-clearButton {
+                color: var(--spice-button);
+                &:hover,
+                &:active {
+                    color: var(--spice-button-active);
+                }
+            }
+        }
+
+        .x-sortBox-sortDropdown {
+            color: var(--spice-button);
+
+            &:focus,
+            &:hover,
+            &:active,
+            &[aria-expanded="true"] {
+                color: var(--spice-button-active);
+            }
+        }
+    }
+}
+
+.playlist-playlist-seeMore,
+.plyalist-playlist-refreshButton,
+.artist-popularTrackList-seeMore,
+.search-recentSearches-seeAll {
+    color: var(--spice-text);
+
+    &:hover {
+        color: var(--spice-button-active);
+    }
+}
+
 
 .playlist-playlist-playlist .main-entityHeader-imageContainer .main-entityHeader-image,
 .playlist-playlist-playlist .main-entityHeader-imageContainer .main-editImage-buttonContainer .main-editImageButton-overlay,
 .main-trackList-trackListRow .main-trackList-rowSectionStart .main-trackList-rowImage {
     border-radius: var(--album-covers-border-radius);
-}
-
-.main-trackList-trackListRow:not(.main-trackList-selected) .main-trackList-rowTitle,
-.main-trackList-trackListRow:not(.main-trackList-selected) .main-trackList-rowSectionVariable a,
-.main-trackList-trackListRow:not(.main-trackList-selected) .main-trackList-rowSectionVariable span,
-.main-trackList-trackListRow:not(.main-trackList-selected) .main-trackList-rowDuration {
-    color: var(--spice-text);
-}
-
-.main-trackList-trackListRow.main-trackList-selected .main-trackList-rowSubTitle a,
-.main-trackList-trackListRow:hover .main-trackList-rowSubTitle a,
-.main-trackList-trackListRow:focus-within .main-trackList-rowSubTitle a,
-.main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .main-trackList-rowSubTitle a,
-.main-trackList-trackListRow:focus-within .main-trackList-rowTitle,
-.main-trackList-trackListRow:hover .main-trackList-rowTitle,
-.main-trackList-trackListRow.main-trackList-selected .main-trackList-rowTitle,
-.main-trackList-trackListRow.main-trackList-selected:hover .main-trackList-rowTitle,
-.main-trackList-trackListRow.main-trackList-selected .main-trackList-rowSectionVariable a,
-.main-trackList-trackListRow.main-trackList-selected:hover .main-trackList-rowSectionVariable a,
-.main-trackList-trackListRow:hover:not(.main-trackList-disabled) .main-trackList-rowSectionVariable a,
-.main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .main-trackList-rowSectionVariable a,
-.main-trackList-trackListRow.main-trackList-selected .main-trackList-rowSectionVariable span,
-.main-trackList-trackListRow.main-trackList-selected:hover .main-trackList-rowSectionVariable span,
-.main-trackList-trackListRow:hover:not(.main-trackList-disabled) .main-trackList-rowSectionVariable span,
-.main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .main-trackList-rowSectionVariable span,
-.main-trackList-trackListRow.main-trackList-selected .main-trackList-rowDuration,
-.main-trackList-trackListRow.main-trackList-selected:hover .main-trackList-rowDuration,
-.main-trackList-trackListRow:hover:not(.main-trackList-disabled) .main-trackList-rowDuration,
-.main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .main-trackList-rowDuration,
-.main-trackList-trackListRow.main-trackList-selected .main-trackList-rowHeartButton,
-.main-trackList-trackListRow.main-trackList-selected:hover .main-trackList-rowHeartButton,
-.main-trackList-trackListRow:hover:not(.main-trackList-disabled) .main-trackList-rowHeartButton,
-.main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .main-trackList-rowHeartButton,
-.main-trackList-trackListRow:hover:not(.main-trackList-disabled) .main-trackList-rowMoreButton,
-.main-trackList-trackListRow:focus-within:not(.main-trackList-disabled) .main-trackList-rowMoreButton,
-.main-trackList-rowSectionVariable[role="columnheader"]:not([aria-sort="none"]) span,
-.main-trackList-rowSectionStart[role="columnheader"]:not([aria-sort="none"]) span,
-.main-trackList-rowSectionEnd[role="columnheader"]:not([aria-sort="none"]) button {
-    color: var(--spice-button-active) !important;
-}
-
-.main-trackList-trackListRow {
-    background: rgba(0, 0, 0, 0);
-    transition: background .3s ease;
-    border-radius: var(--highlight-border-radius);
-}
-
-.main-trackList-trackListRow:focus-within,
-.main-trackList-trackListRow:hover, 
-.main-trackList-trackListRow.main-trackList-selected:hover,
-.main-trackList-trackListRow.main-trackList-selected:focus-within,
-.main-trackList-trackListRow.main-trackList-selected {
-    /* background: rgba(0, 0, 0, 0.6); */
-    background: var(--highlight-background);
-}
-
-.main-trackList-trackListRow.main-trackList-active:not(.main-trackList-selected):not(:hover):not(:focus-within) {
-    background: rgba(var(--spice-rgb-button-active), 0.4);
-    /* border: rgba(var(--spice-rgb-button-active), 0.4) solid; */
-    border-radius: var(--highlight-border-radius);
 }

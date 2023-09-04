@@ -1,15 +1,7 @@
-%activeHighlight {
-    background: var(--highlight-background);
-    opacity: 1;
-}
-%activeColor {
-    color: var(--spice-button-active);
-}
-%activeTransform{
-    transform: scale(0.95);
-}
+@use 'placeholders';
 
 .Root__nav-bar {
+    background: none;
     margin: var(--panel-margin);
     z-index: unset;
     
@@ -23,6 +15,7 @@
 
             &.main-yourLibraryX-library {
                 border-radius: var(--panel-border-radius);
+                background: var(--spice-sidebar);
             }
 
             &:not(.main-yourLibraryX-library) {
@@ -30,8 +23,9 @@
                 top: calc(-48px - var(--panel-margin));
                 width: fit-content;
                 height: 48px;
+                background: none;
                 /* margin: 0 auto; */
-                margin-left: calc(var(--content-spacing) + 8px + 64px + 8px);
+                margin-left: calc(var(--panel-content-margin-left) + 8px + 64px + 8px);
             }
 
             .main-yourLibraryX-navItems {
@@ -82,6 +76,140 @@
                 }
             }
 
+            .main-yourLibraryX-libraryContainer {
+                padding-bottom: var(--panel-content-margin-bottom);
+
+                .main-yourLibraryX-header {
+                    padding: var(--panel-content-margin-top) 0px 8px var(--panel-content-margin-left);
+
+                    &.main-yourLibraryX-headerIsCollapsed {
+                        .main-yourLibraryX-collapseButton {
+                            margin: 0;
+                        }
+                    }
+
+                    .main-yourLibraryX-headerContent button {
+                        color: var(--spice-button);
+                        border-radius: var(--highlight-border-radius);
+
+                        &:hover,
+                        &:active {
+                            background: var(--highlight-background);
+                            color: var(--spice-button-active);
+                        }
+                    }
+                }
+
+                .main-yourLibraryX-filterArea {
+                    // padding: 8px var(--panel-content-margin);
+                }
+
+                .main-yourLibraryX-libraryRootlist {
+                    padding: 0px 16px 0px var(--panel-content-margin-left);
+
+                    &.main-yourLibraryX-libraryIsCollapsed {
+                        padding: 0px 0px 0px var(--panel-content-margin-left);
+                    }
+
+                    .main-yourLibraryX-libraryFilter {
+                        padding: 0;
+
+                        .x-filterBox-filterInputContainer {
+                            // &.x-filterBox-expandedOrHasFilter .x-filterBox-expandButton {
+                            //     color:var(--spice-button-active);
+                            //     z-index:unset;
+                            // }
+                
+                            .x-filterBox-expandButton {
+                                border-radius: var(--highlight-border-radius);
+                                color: var(--spice-button);
+                                &:hover:not(:active),
+                                &:focus {
+                                    transform: none;
+                                    color: var(--spice-button-active);
+                                    background: none;
+                                }
+                    
+                                &:active {
+                                    color:var(--spice-button-active);
+                                    border-color: var(--spice-button-active);
+                                    @extend %activeTransform;
+                                }
+                            }
+                
+                            .x-filterBox-searchIconContainer {
+                                color: var(--spice-text);
+                            }
+                            .x-filterBox-filterInput {
+                                background: var(--highlight-background);
+                                color: var(--spice-text);
+                                border-radius: var(--highlight-border-radius);
+                
+                                &::placeholder {
+                                    color: var(--spice-text);
+                                }
+                            }
+                
+                            .x-filterBox-clearButton {
+                                color: var(--spice-button);
+                                &:hover,
+                                &:active {
+                                    color: var(--spice-button-active);
+                                }
+                            }
+                        }
+                
+                        .x-sortBox-sortDropdown {
+                            color: var(--spice-button);
+                
+                            &:focus,
+                            &:hover,
+                            &:active,
+                            &[aria-expanded="true"] {
+                                color: var(--spice-button-active);
+                            }
+                        }
+                    }
+
+                    .main-useDropTarget-base {
+                        .main-yourLibraryX-listItemGroup {
+                            // background-image:
+                            //     linear-gradient(90deg,
+                            //                     rgba(0, 0, 0, 0.6) 49%,
+                            //                     var(--spice-button-active) 49%,
+                            //                     var(--spice-button-active) 50%,
+                            //                     transparent 50%,
+                            //                     transparent 100%);
+                            background: 
+                                linear-gradient(90deg, 
+                                                var(--highlight-background) 0%, 
+                                                var(--highlight-background) 49%, 
+                                                var(--spice-button-active) 49%, 
+                                                var(--spice-button-active) 50%, 
+                                                rgba(0,0,0,0) 50%, 
+                                                rgba(0,0,0,0) 100%);
+                            /* background: rgba(0,0,0,0.3); */
+                            background-position: center right;
+                            background-size: 200% 100%;
+                            transition: all .4s ease;
+                            border-radius: var(--highlight-border-radius);
+
+                            .TypeElement-ballad-textBase-type {
+                                color: var(--spice-text);
+                            }
+
+                            &:hover {
+                                background-position: center left;
+
+                                .TypeElement-ballad-textBase-type {
+                                    color: var(--spice-button-active);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             .main-useDropTarget-base .main-yourLibraryX-listItemGroup::after {
                 display: none;
             }
@@ -92,29 +220,4 @@
 .main-collectionLinkButton-collectionLinkButton, .main-createPlaylistButton-button,
 .main-yourLibraryX-navItem .main-yourLibraryX-navLink {
     color: var(--spice-button);
-}
-
-.main-useDropTarget-base .main-yourLibraryX-listItemGroup {
-    background-image: 
-        /* linear-gradient(90deg,
-                        transparent 50%,
-                        rgba(0, 0, 0, 0.6) 50%,
-                        rgba(0, 0, 0, 0.6) 95%,
-                        var(--spice-text) 95%); */
-        linear-gradient(90deg,
-                        rgba(0, 0, 0, 0.6) 49%,
-                        var(--spice-button-active) 49%,
-                        var(--spice-button-active) 50%,
-                        transparent 50%,
-                        transparent 100%);
-    /* background: rgba(0,0,0,0.3); */
-    background-position: center right;
-    background-size: 200% 100%;
-    transition: all .4s ease;
-    border-radius: var(--highlight-border-radius);
-}
-
-.main-useDropTarget-base .main-yourLibraryX-listItemGroup:hover {
-    /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0) 0%); */
-    background-position: center left;
 }

@@ -1,0 +1,15 @@
+%textColor {
+    color: var(--spice-text);
+}
+%buttonColor {
+    color: var(--spice-button);
+}
+%activeHighlight {
+    background: var(--highlight-background);
+}
+%activeColor {
+    color: var(--spice-button-active);
+}
+%activeTransform{
+    transform: scale(0.95);
+}

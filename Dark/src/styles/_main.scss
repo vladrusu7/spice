@@ -1,12 +1,20 @@
 :root {
     --player-height: 100px;
-    --player-border-radius: 0px;
     --player-album-cover-size: 64px;
-    --show-lyrics-background: none; /* none / block */
-    --panel-border-radius: 0px;
-    --panel-margin: 0px;
-    --highlight-border-radius: 8px;
+    --show-lyrics-background: none;         /* [none / block] */
+
+    --panel-margin: 10px;
+    --panel-content-margin-left: 5px;       /* distance between content and edge of window */
+    --panel-content-margin-right: 5px;      /* distance between content and edge of window */
+    --panel-content-margin-top: 8px;        /* distance between content and edge of window */
+    --panel-content-margin-bottom: 0px;     /* distance between content and edge of window */
+
+    --player-border-radius: 0px;
+    --panel-border-radius: 8px;
+    --highlight-border-radius: 4px;         /* button / playlist / sidebar items hover background */
     --album-covers-border-radius: 0px;
+
+    --playlist-dynamic-background: block;    /* show automatic playlist / album header background [none / block] */
     --highlight-background: rgba(var(--spice-rgb-highlight), 0.6);
 }
 
@@ -26,10 +34,14 @@
 /* hide premium shit */
 
 /* padding ca sa pot sa dau scroll mai sus de bara de player */
-.main-view-container__scroll-node-child {
-    padding-bottom: 150px;
+.contentSpacing {
+    padding-bottom: calc(var(--player-height) + 50px);
 }
 /* padding ca sa pot sa dau scroll mai sus de bara de player */
+
+.main-view-container__scroll-node-child {
+    padding: 0;
+}
 
 /* scot divider-u dintre top bar si main view */
 .main-view-container__scroll-node-child-spacer {
@@ -55,6 +67,23 @@
     .Root__main-view {
         width: revert;
         margin: var(--panel-margin) var(--panel-margin) var(--panel-margin) 0;
+        padding-bottom: var(--panel-content-margin-bottom);
         border-radius: var(--panel-border-radius);
+    }
+}
+
+.os-theme-spotify {
+    .os-scrollbar-vertical {
+        margin-right: 2px;
+        top: var(--content-spacing) !important;
+
+        .os-scrollbar-handle {
+            background: var(--spice-misc) !important;
+            opacity: 0.3;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 }
