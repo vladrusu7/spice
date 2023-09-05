@@ -3,7 +3,7 @@
     --player-album-cover-size: 64px;
     --show-lyrics-background: none;         /* [none / block] */
 
-    --panel-margin: 10px;
+    --panel-margin: 5px;
     --panel-content-margin-left: 5px;       /* distance between content and edge of window */
     --panel-content-margin-right: 5px;      /* distance between content and edge of window */
     --panel-content-margin-top: 8px;        /* distance between content and edge of window */
@@ -12,6 +12,9 @@
     --player-border-radius: 0px;
     --panel-border-radius: 8px;
     --highlight-border-radius: 4px;         /* button / playlist / sidebar items hover background */
+    --card-border-radius: 4px;
+    --context-menu-border-radius: 4px;
+    --modal-border-radius: 4px;
     --album-covers-border-radius: 0px;
 
     --playlist-dynamic-background: block;    /* show automatic playlist / album header background [none / block] */
@@ -34,7 +37,15 @@
 /* hide premium shit */
 
 /* padding ca sa pot sa dau scroll mai sus de bara de player */
-.contentSpacing {
+.main-home-home,
+.playlist-playlist-playlistContent,
+.album-albumPage-sectionWrapper,
+.show-showPage-sectionWrapper,
+.search-recentSearches-searchPageGrid,
+.x-settings-container,
+.FNDlk94hIuzTU46SX9XI, /* tour dates */
+.VvL91cIRcCi1hJh0K845,
+.dpN5ViPOceUWNB5EQPHN /* podcast episode */ {
     padding-bottom: calc(var(--player-height) + 50px);
 }
 /* padding ca sa pot sa dau scroll mai sus de bara de player */

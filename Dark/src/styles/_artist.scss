@@ -20,29 +20,30 @@
         }
     }
 
+    .main-entityHeader-container.main-entityHeader-withBackgroundImage {
+        height: calc(100vh - 85px - 2 * var(--panel-margin) - var(--panel-content-margin-bottom) - 3px);
+        max-height: unset;
+        padding: var(--content-spacing);
+
+        .main-entityHeader-headerText {
+            margin: auto 0px;
+        }
+    }
+
     .artist-artistOverview-overview {
         margin: 0;
 
-        .main-entityHeader-container.main-entityHeader-withBackgroundImage {
-            height: calc(100vh - 85px - 2 * var(--panel-margin) - var(--panel-content-margin-bottom) - 3px);
-            max-height: unset;
-            padding: var(--content-spacing);
-
-            .main-entityHeader-headerText {
-                margin: auto 0px;
-            }
-        }
-
         .artist-artistOverview-artistOverviewContent {
             background: var(--spice-main);
+            padding-bottom: calc(var(--player-height) + 50px);
 
             .main-actionBarBackground-background {
                 display: none;
             }
 
-            .main-actionBar-ActionBar {
-                padding-bottom: var(--content-spacing);
-            }
+            // .main-actionBar-ActionBar {
+            //     padding-bottom: var(--content-spacing);
+            // }
         }
     }
 
@@ -66,9 +67,5 @@
         .artist-artistDiscography-button[aria-label="grid"] {
             order: 2;
         }
-    }
-
-    .artist-artistDiscography-tracklist {
-        padding-bottom: 0;
     }
 }

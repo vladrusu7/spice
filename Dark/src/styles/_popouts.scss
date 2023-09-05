@@ -1,10 +1,15 @@
-// .main-contextMenu-menu {
-//     .main-contextMenu-menuItemButton {
-//         color: var(--spice-button);
-//     }
-// }
+@use 'placeholders';
 
+.main-contextMenu-menu {
+    border-radius: var(--context-menu-border-radius);
+    
+    .main-contextMenu-menuItemButton  {
+        @extend %textColor;
 
-/* .main-entityHeader-container.main-entityHeader-nonWrapped {
-    min-height: 280px;
-} */
+        &:hover,
+        &[aria-expanded="true"] {
+            @extend %activeHighlight;
+            @extend %activeColor;
+        }
+    }
+}

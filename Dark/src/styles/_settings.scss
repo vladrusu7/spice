@@ -1,0 +1,47 @@
+@use 'placeholders';
+
+.x-settings-container {
+    .x-filterBox-filterInputContainer {
+        // &.x-filterBox-expandedOrHasFilter .x-filterBox-expandButton {
+        //     color:var(--spice-button-active);
+        //     z-index:unset;
+        // }
+
+        .x-filterBox-expandButton {
+            border-radius: var(--highlight-border-radius);
+            color: var(--spice-button);
+            &:hover:not(:active),
+            &:focus {
+                transform: none;
+                color: var(--spice-button-active);
+                background: none;
+            }
+
+            &:active {
+                color:var(--spice-button-active);
+                border-color: var(--spice-button-active);
+                @extend %activeTransform;
+            }
+        }
+
+        .x-filterBox-searchIconContainer {
+            color: var(--spice-text);
+        }
+        .x-filterBox-filterInput {
+            background: var(--highlight-background);
+            color: var(--spice-text);
+            border-radius: var(--highlight-border-radius);
+        }
+    }
+
+    .x-toggle-wrapper {
+        input:checked~.x-toggle-indicatorWrapper  {
+            background-color: var(--spice-button-active);
+        }
+    }
+
+    .main-dropDown-dropDown {
+        color: var(--spice-text);
+        background: var(--spice-card);
+    }
+}

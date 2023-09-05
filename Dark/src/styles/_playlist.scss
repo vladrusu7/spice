@@ -10,7 +10,7 @@
 .main-trackList-trackList {
     .main-trackList-trackListHeader {
         &.main-trackList-trackListHeaderStuck {
-            top: 0 !important;
+            top: -1px !important;
             background: var(--spice-main);
             box-shadow: none;
         }
@@ -86,7 +86,8 @@
 }
 
 .playlist-playlist-playlist,
-.album-albumPage-sectionWrapper {
+.album-albumPage-sectionWrapper,
+.dpN5ViPOceUWNB5EQPHN {
     margin: 0;
 
     .main-entityHeader-container {
@@ -94,7 +95,7 @@
         max-height: unset;
         min-height: unset;
         padding: var(--content-spacing);
-        color: unset;
+        // color: unset;
 
         .main-entityHeader-backgroundColor {
             display: var(--playlist-dynamic-background);
@@ -115,7 +116,12 @@
         .main-entityHeader-headerText {
             display: block;
             flex: none;
+            flex-shrink: 1;
             margin: auto auto auto 0;
+
+            .playlist-playlist-whiteOpacity {
+                color: inherit;
+            }
 
             .main-entityHeader-metaDataText,
             .main-entityHeader-metaDataText .UyzJidwrGk3awngSGIwv {

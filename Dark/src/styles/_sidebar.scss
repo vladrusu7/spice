@@ -59,6 +59,7 @@
                         align-items: center;
                         justify-content: center;
                         transition: none;
+                        color: var(--spice-button);
 
                         &.main-yourLibraryX-navLinkActive svg {
                             @extend %activeColor;
@@ -100,9 +101,9 @@
                     }
                 }
 
-                .main-yourLibraryX-filterArea {
-                    // padding: 8px var(--panel-content-margin);
-                }
+                // .main-yourLibraryX-filterArea {
+                //     padding: 8px var(--panel-content-margin);
+                // }
 
                 .main-yourLibraryX-libraryRootlist {
                     padding: 0px 16px 0px var(--panel-content-margin-left);
@@ -111,100 +112,86 @@
                         padding: 0px 0px 0px var(--panel-content-margin-left);
                     }
 
-                    .main-yourLibraryX-libraryFilter {
-                        padding: 0;
-
-                        .x-filterBox-filterInputContainer {
-                            // &.x-filterBox-expandedOrHasFilter .x-filterBox-expandButton {
-                            //     color:var(--spice-button-active);
-                            //     z-index:unset;
-                            // }
-                
-                            .x-filterBox-expandButton {
-                                border-radius: var(--highlight-border-radius);
-                                color: var(--spice-button);
-                                &:hover:not(:active),
-                                &:focus {
-                                    transform: none;
-                                    color: var(--spice-button-active);
-                                    background: none;
-                                }
-                    
-                                &:active {
-                                    color:var(--spice-button-active);
-                                    border-color: var(--spice-button-active);
-                                    @extend %activeTransform;
-                                }
-                            }
-                
-                            .x-filterBox-searchIconContainer {
-                                color: var(--spice-text);
-                            }
-                            .x-filterBox-filterInput {
-                                background: var(--highlight-background);
-                                color: var(--spice-text);
-                                border-radius: var(--highlight-border-radius);
-                
-                                &::placeholder {
-                                    color: var(--spice-text);
-                                }
-                            }
-                
-                            .x-filterBox-clearButton {
-                                color: var(--spice-button);
-                                &:hover,
-                                &:active {
-                                    color: var(--spice-button-active);
-                                }
-                            }
-                        }
-                
-                        .x-sortBox-sortDropdown {
-                            color: var(--spice-button);
-                
-                            &:focus,
-                            &:hover,
-                            &:active,
-                            &[aria-expanded="true"] {
-                                color: var(--spice-button-active);
-                            }
-                        }
-                    }
-
                     .main-useDropTarget-base {
                         .main-yourLibraryX-listItemGroup {
-                            // background-image:
-                            //     linear-gradient(90deg,
-                            //                     rgba(0, 0, 0, 0.6) 49%,
-                            //                     var(--spice-button-active) 49%,
-                            //                     var(--spice-button-active) 50%,
-                            //                     transparent 50%,
-                            //                     transparent 100%);
-                            background: 
-                                linear-gradient(90deg, 
-                                                var(--highlight-background) 0%, 
-                                                var(--highlight-background) 49%, 
-                                                var(--spice-button-active) 49%, 
-                                                var(--spice-button-active) 50%, 
-                                                rgba(0,0,0,0) 50%, 
-                                                rgba(0,0,0,0) 100%);
-                            /* background: rgba(0,0,0,0.3); */
-                            background-position: center right;
-                            background-size: 200% 100%;
-                            transition: all .4s ease;
-                            border-radius: var(--highlight-border-radius);
-
+                            @extend %activeGradient;
                             .TypeElement-ballad-textBase-type {
-                                color: var(--spice-text);
+                                // color: var(--spice-text);
+                                @extend %textColor;
                             }
 
                             &:hover {
-                                background-position: center left;
-
                                 .TypeElement-ballad-textBase-type {
-                                    color: var(--spice-button-active);
+                                    // color: var(--spice-button-active);
+                                   @extend %activeColor;
                                 }
                             }
+                        }
+                    }
+                }
+
+                .main-yourLibraryX-libraryFilter {
+                    padding: 0;
+
+                    .x-filterBox-filterInputContainer {
+                        // &.x-filterBox-expandedOrHasFilter .x-filterBox-expandButton {
+                        //     color:var(--spice-button-active);
+                        //     z-index:unset;
+                        // }
+            
+                        .x-filterBox-expandButton {
+                            border-radius: var(--highlight-border-radius);
+                            color: var(--spice-button);
+                            &:hover:not(:active),
+                            &:focus {
+                                transform: none;
+                                color: var(--spice-button-active);
+                                background: none;
+                            }
+                
+                            &:active {
+                                color:var(--spice-button-active);
+                                border-color: var(--spice-button-active);
+                                @extend %activeTransform;
+                            }
+                        }
+            
+                        .x-filterBox-searchIconContainer {
+                            // color: var(--spice-text);
+                            @extend %textColor;
+                        }
+                        .x-filterBox-filterInput {
+                            background: var(--highlight-background);
+                            color: var(--spice-text);
+                            border-radius: var(--highlight-border-radius);
+            
+                            &::placeholder {
+                                // color: var(--spice-text);
+                                @extend %textColor;
+                            }
+                        }
+            
+                        .x-filterBox-clearButton {
+                            // color: var(--spice-button);
+                            @extend %buttonColor;
+                            &:hover,
+                            &:active {
+                                // color: var(--spice-button-active);
+                                @extend %activeColor;
+                            }
+                        }
+                    }
+            
+                    .x-sortBox-sortDropdown {
+                        // color: var(--spice-button);
+                        @extend %buttonColor;
+            
+                        &:focus,
+                        &:hover,
+                        &:active,
+                        &[aria-expanded="true"] {
+                            // color: var(--spice-button-active);
+                            @extend %activeColor;
                         }
                     }
                 }
@@ -215,9 +202,4 @@
             }
         }
     }
-}
-
-.main-collectionLinkButton-collectionLinkButton, .main-createPlaylistButton-button,
-.main-yourLibraryX-navItem .main-yourLibraryX-navLink {
-    color: var(--spice-button);
 }

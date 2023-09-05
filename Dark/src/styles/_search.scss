@@ -1,0 +1,37 @@
+@use 'placeholders';
+
+.search-searchCategory-SearchCategory {
+    display: flex;
+    padding: 0;
+    top: 0;
+    align-items: center;
+}
+
+.Chip__ChipComponent-sc-ry3uox-0 {
+    &:hover .ChipInner__ChipInnerComponent-sc-1ly6j4j-0 {
+        @extend %activeColor;
+        @extend %activeHighlight;
+    }
+}
+
+.search-searchResult-topResult {
+    .main-heroCard-card {
+        background: var(--spice-card);
+        border-radius: var(--card-border-radius);
+
+        &:hover {
+            background: var(--highlight-background);
+        }
+    }
+}
+
+.search-searchResult-tracklistContainer {
+    .main-gridContainer-gridContainer {
+        background: var(--spice-card);
+        border-radius: var(--card-border-radius);
+
+        .main-trackList-trackList {
+            border-radius: 0;
+        }
+    }
+}

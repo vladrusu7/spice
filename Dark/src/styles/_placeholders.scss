@@ -7,6 +7,32 @@
 %activeHighlight {
     background: var(--highlight-background);
 }
+%activeGradient {
+    // background-image:
+    //     linear-gradient(90deg,
+    //                     rgba(0, 0, 0, 0.6) 49%,
+    //                     var(--spice-button-active) 49%,
+    //                     var(--spice-button-active) 50%,
+    //                     transparent 50%,
+    //                     transparent 100%);
+    background: 
+        linear-gradient(90deg, 
+                        var(--highlight-background) 0%, 
+                        var(--highlight-background) 49%, 
+                        var(--spice-button-active) 49%, 
+                        var(--spice-button-active) 50%, 
+                        rgba(0,0,0,0) 50%, 
+                        rgba(0,0,0,0) 100%);
+    /* background: rgba(0,0,0,0.3); */
+    background-position: center right;
+    background-size: 200% 100%;
+    transition: all .4s ease;
+    border-radius: var(--highlight-border-radius);
+
+    &:hover {
+        background-position: center left;
+    }
+}
 %activeColor {
     color: var(--spice-button-active);
 }

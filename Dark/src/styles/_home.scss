@@ -12,6 +12,7 @@
 .view-homeShortcutsGrid-shortcuts {
     .view-homeShortcutsGrid-shortcut {
         background: var(--spice-card);
+        border-radius: var(--card-border-radius);
 
         &:hover {
             @extend %activeHighlight;
@@ -26,6 +27,7 @@
 .main-shelf-shelf {
     .main-card-card {
         background: var(--spice-card);
+        border-radius: var(--card-border-radius);
 
         &:hover {
             @extend %activeHighlight;

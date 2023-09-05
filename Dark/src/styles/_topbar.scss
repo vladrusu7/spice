@@ -21,6 +21,7 @@
         }
 
         .main-topBar-historyButtons {
+            margin-right: calc(8px + 64px + 8px);
             .main-topBar-button {
                 border-radius: var(--highlight-border-radius);
 
@@ -58,12 +59,17 @@
             }
 
             .main-topBar-searchBar {
-                margin-left: calc(32px + 8px);
+                margin-left: calc(-1 * (32px + 8px));
 
                 .x-searchInput-searchInputInput {
                     height: 32px;
                     padding: 0 32px;
                     border-radius: var(--highlight-border-radius);
+                    background: var(--highlight-background);
+
+                    &::placeholder {
+                        color: var(--spice-text);
+                    }
 
                     &:focus {
                         box-shadow: 0 0 0 2px var(--spice-button-active);
@@ -76,7 +82,8 @@
             }
         }
 
-        .main-topBar-buddyFeed {
+        .main-topBar-buddyFeed,
+        .main-topBar-whatsNewFeed {
             border-radius: var(--highlight-border-radius);
             transform: none;
 
@@ -128,6 +135,7 @@
 
         .main-userWidget-boxCondensed,
         .main-topBar-buddyFeed,
+        .main-topBar-whatsNewFeed,
         .main-topBar-historyButtons .main-topBar-button {
             background: none;
             color: var(--spice-button);
