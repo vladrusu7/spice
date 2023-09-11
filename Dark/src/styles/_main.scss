@@ -45,7 +45,9 @@
 .x-settings-container,
 .FNDlk94hIuzTU46SX9XI, /* tour dates */
 .VvL91cIRcCi1hJh0K845,
-.dpN5ViPOceUWNB5EQPHN /* podcast episode */ {
+.dpN5ViPOceUWNB5EQPHN, /* podcast episode */
+.queue-queuePage-queuePage, /* queue */
+.dt3fysZYdQ6hhWfpmjAu /* recently played */ {
     padding-bottom: calc(var(--player-height) + 50px);
 }
 /* padding ca sa pot sa dau scroll mai sus de bara de player */
@@ -90,10 +92,13 @@
 
         .os-scrollbar-handle {
             background: var(--spice-misc) !important;
+            border: 3px solid var(--spice-button);
+            border-radius: 4px;
             opacity: 0.3;
 
-            &:hover {
-                opacity: 1;
+            &:hover,
+            &.active {
+                opacity: 0.8;
             }
         }
     }

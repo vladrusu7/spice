@@ -162,50 +162,78 @@
         }
 
         .main-nowPlayingBar-right {
-            .main-nowPlayingBar-volumeBar {
-                /* display: flex;
-                flex-direction: column-reverse;
-                width: 100%;
-                overflow: visible; */
-                position: relative;
-                margin: 0;
-                flex: 0;
+            .main-nowPlayingBar-extraControls {
+                .control-button,
+                .Button-sc-1dqy6lx-0 {
+                    @extend %buttonColor;
 
-                .x1jWng8HDweDS840aiIA {
-                    position: absolute;
-                    display: none;
-                    width: 150px;
-                    right: -150px;
+                    &:hover,
+                    &:active {
+                        @extend %activeColor;
+                    }
 
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        background: rgba(0, 0, 0, 0.2);
-                        backdrop-filter: blur(5px);
-                        display: none;
-                        height: calc(100% + 30px);
-                        width: calc(100% + 20px);
-                        margin-left: -10px;
-                        transform: translate(0, -50%);
-                        top: 50%;
+                    &:active {
+                        @extend %activeTransform;
+                        opacity: 1;
                     }
                 }
 
-                &:hover {
-                    .x1jWng8HDweDS840aiIA,
-                    .x1jWng8HDweDS840aiIA::before {
-                        display: block;
+                .main-genericButton-buttonActive {
+                    @extend %activeColor;
+
+                    &::after {
+                        background: var(--spice-button-active);
+                    }
+                }
+
+                .main-nowPlayingBar-volumeBar {
+                    /* display: flex;
+                    flex-direction: column-reverse;
+                    width: 100%;
+                    overflow: visible; */
+                    position: relative;
+                    margin: 0;
+                    flex: 0;
+    
+                    .x1jWng8HDweDS840aiIA {
+                        position: absolute;
+                        display: none;
+                        width: 150px;
+                        right: -150px;
+    
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            background: rgba(0, 0, 0, 0.2);
+                            backdrop-filter: blur(5px);
+                            display: none;
+                            height: calc(100% + 30px);
+                            width: calc(100% + 20px);
+                            margin-left: -10px;
+                            transform: translate(0, -50%);
+                            top: 50%;
+                        }
+                    }
+    
+                    &:hover {
+                        .x1jWng8HDweDS840aiIA,
+                        .x1jWng8HDweDS840aiIA::before {
+                            display: block;
+                        }
+    
+                        .control-button {
+                            @extend %activeColor;
+                        }
+    
+                        .x-progressBar-fillColor {
+                            background: var(--spice-button-active);
+                        }
                     }
                 }
             }
         }
     }
 }
-
-/* .main-nowPlayingBar-right {
-    min-width: unset;
-    width: auto;
-} */
 
 .main-nowPlayingBar-left,
 .main-nowPlayingBar-right,
@@ -229,10 +257,6 @@
 .main-skipForwardButton-button:focus:not(:focus-visible, :hover, :active),
 .main-repeatButton-button,
 .main-repeatButton-button:focus:not(:focus-visible, :hover, :active),
-.control-button:not(.control-button--active):not(.main-addButton-active),
-.control-button:focus,
-.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0,
-/* .main-addButton-button, */
 .main-playPauseButton-button svg {
     color: var(--spice-button);
 }
@@ -245,22 +269,13 @@
 .main-repeatButton-button:hover,
 .main-repeatButton-button.main-repeatButton-active,
 .main-repeatButton-button.main-repeatButton-active:not([disabled]):focus:not(:focus-visible):not(:hover),
-.control-button:hover:not(.control-button--active):not(.main-addButton-active),
 .main-genericButton-button.main-genericButton-buttonActive,
 .main-addButton-active,
 .main-addButton-active:focus,
 .main-addButton-active:hover,
-.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:hover,
-.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active:hover,
 .main-playPauseButton-button:hover svg,
 .main-playPauseButton-button:active svg {
     color: var(--spice-button-active);
-}
-
-.main-genericButton-button.main-genericButton-buttonActive::after {
-    /* .progress-bar--is-active .progress-bar__fg,
-.progress-bar--is-active .progress-bar__slider { */
-    background: var(--spice-button-active);
 }
 
 .main-shuffleButton-button:active,
@@ -271,10 +286,6 @@
 .main-skipForwardButton-button:active:focus,
 .main-repeatButton-button:active,
 .main-repeatButton-button:active:focus,
-.main-nowPlayingBar-extraControls .control-button:focus:active,
-.main-nowPlayingBar-extraControls .control-button:hover:active,
-.main-nowPlayingBar-extraControls .control-button:active,
-.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active,
 .main-playPauseButton-button:active {
     transform: scale(0.95);
     color: var(--spice-button-active);

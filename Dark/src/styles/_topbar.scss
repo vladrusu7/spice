@@ -24,11 +24,16 @@
             margin-right: calc(8px + 64px + 8px);
             .main-topBar-button {
                 border-radius: var(--highlight-border-radius);
+                opacity: 1;
 
                 // &:last-child { // spicetify update button
                 //     position: absolute;
                 //     right: 130px;
                 // }
+
+                &[disabled] {
+                    color: var(--spice-button-disabled);
+                }
 
                 &:active:not([disabled]) {
                     @extend %activeTransform;

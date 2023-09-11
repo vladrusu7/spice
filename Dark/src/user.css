@@ -42,7 +42,9 @@
 .x-settings-container,
 .FNDlk94hIuzTU46SX9XI,
 .VvL91cIRcCi1hJh0K845,
-.dpN5ViPOceUWNB5EQPHN {
+.dpN5ViPOceUWNB5EQPHN,
+.queue-queuePage-queuePage,
+.dt3fysZYdQ6hhWfpmjAu {
   padding-bottom: calc(var(--player-height) + 50px);
 }
 
@@ -81,10 +83,12 @@
 }
 .os-theme-spotify .os-scrollbar-vertical .os-scrollbar-handle {
   background: var(--spice-misc) !important;
+  border: 3px solid var(--spice-button);
+  border-radius: 4px;
   opacity: 0.3;
 }
-.os-theme-spotify .os-scrollbar-vertical .os-scrollbar-handle:hover {
-  opacity: 1;
+.os-theme-spotify .os-scrollbar-vertical .os-scrollbar-handle:hover, .os-theme-spotify .os-scrollbar-vertical .os-scrollbar-handle.active {
+  opacity: 0.8;
 }
 
 .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-filterInput::-moz-placeholder {
@@ -107,7 +111,8 @@
 }
 
 .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-name a,
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-artists a, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-clearButton, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown {
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-artists a, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-clearButton, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown {
   color: var(--spice-button);
 }
 
@@ -173,18 +178,22 @@
 .main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled).main-trackList-selected .main-tag-container, .Chip__ChipComponent-sc-ry3uox-0:hover .ChipInner__ChipInnerComponent-sc-1ly6j4j-0, .view-homeShortcutsGrid-shortcuts .view-homeShortcutsGrid-shortcut:hover .view-homeShortcutsGrid-name a, .main-shelf-shelf .main-card-card:hover .main-cardHeader-text,
 .main-shelf-shelf .main-card-card:hover .main-cardSubHeader-root a:hover, .main-contextMenu-menu .main-contextMenu-menuItemButton:hover, .main-contextMenu-menu .main-contextMenu-menuItemButton[aria-expanded=true], .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-name a:hover, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-name a:active,
 .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-artists a:hover,
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-artists a:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem:hover .main-yourLibraryX-navLink svg, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem .main-yourLibraryX-navLink.main-yourLibraryX-navLinkActive svg, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryRootlist .main-useDropTarget-base .main-yourLibraryX-listItemGroup:hover .TypeElement-ballad-textBase-type, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-clearButton:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-clearButton:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown:focus, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown[aria-expanded=true], .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]), .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:hover:not([disabled]), .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]) svg, .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:hover:not([disabled]) svg, .Root__top-bar .main-topBar-container .main-topBar-buddyFeed:hover, .Root__top-bar .main-topBar-container .main-topBar-buddyFeed:active,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-artists a:active, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button:hover, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button:active,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:hover,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-genericButton-buttonActive, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar:hover .control-button, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem:hover .main-yourLibraryX-navLink svg, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem .main-yourLibraryX-navLink.main-yourLibraryX-navLinkActive svg, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryRootlist .main-useDropTarget-base .main-yourLibraryX-listItemGroup:hover .TypeElement-ballad-textBase-type, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-clearButton:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-clearButton:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown:focus, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown[aria-expanded=true], .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]), .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:hover:not([disabled]), .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]) svg, .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:hover:not([disabled]) svg, .Root__top-bar .main-topBar-container .main-topBar-buddyFeed:hover, .Root__top-bar .main-topBar-container .main-topBar-buddyFeed:active,
 .Root__top-bar .main-topBar-container .main-topBar-whatsNewFeed:hover,
 .Root__top-bar .main-topBar-container .main-topBar-whatsNewFeed:active, .Root__top-bar .main-topBar-container .main-userWidget-boxCondensed:active, .Root__top-bar .main-topBar-container .main-userWidget-boxCondensed[data-context-menu-open=true] {
   color: var(--spice-button-active);
 }
 
-.x-settings-container .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .playlist-playlist-playlist .main-actionBar-ActionBar .I3oc8sxg8Duq4kYUGnMo:active,
+.x-settings-container .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .Root__main-view .artist-artistOverview-overview .artist-artistOverview-artistOverviewContent .main-actionBar-ActionBar .Button-sc-y0gtbx-0:active,
+.Root__main-view .artist-artistOverview-overview .artist-artistOverview-artistOverviewContent .main-actionBar-ActionBar .Button-sc-1dqy6lx-0:active, .playlist-playlist-playlist .main-actionBar-ActionBar .I3oc8sxg8Duq4kYUGnMo:active,
 .playlist-playlist-playlist .main-actionBar-ActionBar .Button-sc-1dqy6lx-0:active,
 .album-albumPage-sectionWrapper .main-actionBar-ActionBar .I3oc8sxg8Duq4kYUGnMo:active,
 .album-albumPage-sectionWrapper .main-actionBar-ActionBar .Button-sc-1dqy6lx-0:active,
 .dpN5ViPOceUWNB5EQPHN .main-actionBar-ActionBar .I3oc8sxg8Duq4kYUGnMo:active,
-.dpN5ViPOceUWNB5EQPHN .main-actionBar-ActionBar .Button-sc-1dqy6lx-0:active, .playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]), .Root__top-bar .main-topBar-container .main-topBar-buddyFeed:active,
+.dpN5ViPOceUWNB5EQPHN .main-actionBar-ActionBar .Button-sc-1dqy6lx-0:active, .playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button:active,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]), .Root__top-bar .main-topBar-container .main-topBar-buddyFeed:active,
 .Root__top-bar .main-topBar-container .main-topBar-whatsNewFeed:active, .Root__top-bar .main-topBar-container .main-userWidget-boxCondensed:active {
   transform: scale(0.95);
 }
@@ -209,6 +218,10 @@
 }
 .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button {
   border-radius: var(--highlight-border-radius);
+  opacity: 1;
+}
+.Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button[disabled] {
+  color: var(--spice-button-disabled);
 }
 .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button svg {
   width: 20px;
@@ -501,7 +514,14 @@
   right: 195px;
   /* right: -65px; */
 }
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-volumeBar {
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button:active,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active {
+  opacity: 1;
+}
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-genericButton-buttonActive::after {
+  background: var(--spice-button-active);
+}
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar {
   /* display: flex;
   flex-direction: column-reverse;
   width: 100%;
@@ -510,13 +530,13 @@
   margin: 0;
   flex: 0;
 }
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-volumeBar .x1jWng8HDweDS840aiIA {
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar .x1jWng8HDweDS840aiIA {
   position: absolute;
   display: none;
   width: 150px;
   right: -150px;
 }
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-volumeBar .x1jWng8HDweDS840aiIA::before {
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar .x1jWng8HDweDS840aiIA::before {
   content: "";
   position: absolute;
   background: rgba(0, 0, 0, 0.2);
@@ -529,15 +549,14 @@
   transform: translate(0, -50%);
   top: 50%;
 }
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-volumeBar:hover .x1jWng8HDweDS840aiIA,
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-volumeBar:hover .x1jWng8HDweDS840aiIA::before {
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar:hover .x1jWng8HDweDS840aiIA,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar:hover .x1jWng8HDweDS840aiIA::before {
   display: block;
 }
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar:hover .x-progressBar-fillColor {
+  background: var(--spice-button-active);
+}
 
-/* .main-nowPlayingBar-right {
-    min-width: unset;
-    width: auto;
-} */
 .main-nowPlayingBar-left,
 .main-nowPlayingBar-right,
 .player-controls .player-controls__buttons,
@@ -560,9 +579,6 @@
 .main-skipForwardButton-button:focus:not(:focus-visible, :hover, :active),
 .main-repeatButton-button,
 .main-repeatButton-button:focus:not(:focus-visible, :hover, :active),
-.control-button:not(.control-button--active):not(.main-addButton-active),
-.control-button:focus,
-.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0,
 .main-playPauseButton-button svg {
   color: var(--spice-button);
 }
@@ -575,22 +591,13 @@
 .main-repeatButton-button:hover,
 .main-repeatButton-button.main-repeatButton-active,
 .main-repeatButton-button.main-repeatButton-active:not([disabled]):focus:not(:focus-visible):not(:hover),
-.control-button:hover:not(.control-button--active):not(.main-addButton-active),
 .main-genericButton-button.main-genericButton-buttonActive,
 .main-addButton-active,
 .main-addButton-active:focus,
 .main-addButton-active:hover,
-.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:hover,
-.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active:hover,
 .main-playPauseButton-button:hover svg,
 .main-playPauseButton-button:active svg {
   color: var(--spice-button-active);
-}
-
-.main-genericButton-button.main-genericButton-buttonActive::after {
-  /* .progress-bar--is-active .progress-bar__fg,
-  .progress-bar--is-active .progress-bar__slider { */
-  background: var(--spice-button-active);
 }
 
 .main-shuffleButton-button:active,
@@ -601,10 +608,6 @@
 .main-skipForwardButton-button:active:focus,
 .main-repeatButton-button:active,
 .main-repeatButton-button:active:focus,
-.main-nowPlayingBar-extraControls .control-button:focus:active,
-.main-nowPlayingBar-extraControls .control-button:hover:active,
-.main-nowPlayingBar-extraControls .control-button:active,
-.main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active,
 .main-playPauseButton-button:active {
   transform: scale(0.95);
   color: var(--spice-button-active);
@@ -683,6 +686,16 @@
 .main-contextMenu-menu {
   border-radius: var(--context-menu-border-radius);
 }
+.GenericModal.encore-dark-theme > div {
+  border-radius: var(--modal-border-radius);
+}
+.GenericModal.encore-dark-theme > div.encore-light-theme.main-confirmDialog-container {
+  background: var(--spice-main);
+}
+.GenericModal.encore-dark-theme > div.encore-light-theme.main-confirmDialog-container h2, .GenericModal.encore-dark-theme > div.encore-light-theme.main-confirmDialog-container p, .GenericModal.encore-dark-theme > div.encore-light-theme.main-confirmDialog-container button[data-encore-id=buttonTertiary] {
+  color: var(--spice-text);
+}
+
 .main-home-homeHeader {
   margin-top: 0;
 }
@@ -811,11 +824,6 @@
   display: var(--playlist-dynamic-background);
   height: 110px;
 }
-.playlist-playlist-playlist .main-actionBar-ActionBar,
-.album-albumPage-sectionWrapper .main-actionBar-ActionBar,
-.dpN5ViPOceUWNB5EQPHN .main-actionBar-ActionBar {
-  padding-bottom: var(--content-spacing);
-}
 .playlist-playlist-playlist .main-actionBar-ActionBar .main-playButton-PlayButton,
 .album-albumPage-sectionWrapper .main-actionBar-ActionBar .main-playButton-PlayButton,
 .dpN5ViPOceUWNB5EQPHN .main-actionBar-ActionBar .main-playButton-PlayButton {
@@ -898,6 +906,13 @@
 .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown:focus, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown:hover, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown:active, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown[aria-expanded=true] {
   color: var(--spice-button-active);
 }
+.playlist-playlist-playlist .playlist-inlineSearchBox-filterInputContainer .playlist-inlineSearchBox-filterInput {
+  background: var(--spice-button-disabled);
+  color: var(--spice-text);
+}
+.playlist-playlist-playlist .playlist-inlineSearchBox-filterInputContainer .playlist-inlineSearchBox-filterInput:focus {
+  background: var(--highlight-background);
+}
 
 .playlist-playlist-seeMore,
 .plyalist-playlist-refreshButton,
@@ -934,17 +949,43 @@
   padding: var(--content-spacing);
 }
 .Root__main-view .main-entityHeader-container.main-entityHeader-withBackgroundImage .main-entityHeader-headerText {
+  padding: 15px;
   margin: auto 0px;
 }
 .Root__main-view .artist-artistOverview-overview {
   margin: 0;
 }
 .Root__main-view .artist-artistOverview-overview .artist-artistOverview-artistOverviewContent {
-  background: var(--spice-main);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(var(--spice-rgb-main), 0.5) 3%, rgba(var(--spice-rgb-main), 0.8) 6%, var(--spice-main) 10%);
   padding-bottom: calc(var(--player-height) + 50px);
 }
 .Root__main-view .artist-artistOverview-overview .artist-artistOverview-artistOverviewContent .main-actionBarBackground-background {
   display: none;
+}
+.Root__main-view .artist-artistOverview-overview .artist-artistOverview-artistOverviewContent .main-actionBar-ActionBar .main-playButton-PlayButton {
+  width: revert;
+  height: revert;
+}
+.Root__main-view .artist-artistOverview-overview .artist-artistOverview-artistOverviewContent .main-actionBar-ActionBar .Button-sc-y0gtbx-0,
+.Root__main-view .artist-artistOverview-overview .artist-artistOverview-artistOverviewContent .main-actionBar-ActionBar .Button-sc-1dqy6lx-0 {
+  border-radius: var(--highlight-border-radius);
+  border-color: var(--spice-button);
+  color: var(--spice-button);
+  opacity: 1;
+}
+.Root__main-view .artist-artistOverview-overview .artist-artistOverview-artistOverviewContent .main-actionBar-ActionBar .Button-sc-y0gtbx-0:hover:not(:active),
+.Root__main-view .artist-artistOverview-overview .artist-artistOverview-artistOverviewContent .main-actionBar-ActionBar .Button-sc-1dqy6lx-0:hover:not(:active) {
+  transform: none;
+  color: var(--spice-button-active);
+  border-color: var(--spice-button-active);
+}
+.Root__main-view .artist-artistOverview-overview .artist-artistOverview-artistOverviewContent .main-actionBar-ActionBar .Button-sc-y0gtbx-0:active,
+.Root__main-view .artist-artistOverview-overview .artist-artistOverview-artistOverviewContent .main-actionBar-ActionBar .Button-sc-1dqy6lx-0:active {
+  color: var(--spice-button-active);
+  border-color: var(--spice-button-active);
+}
+.Root__main-view section[data-test-uri^="spotify:artist"] > div:first-child {
+  padding-bottom: calc(var(--player-height) + 50px);
 }
 .Root__main-view .artist-artistDiscography-topBar {
   padding: 0px 16px;

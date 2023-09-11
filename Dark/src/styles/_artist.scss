@@ -26,7 +26,16 @@
         padding: var(--content-spacing);
 
         .main-entityHeader-headerText {
+            // border-radius: 8px;
+            padding: 15px;
             margin: auto 0px;
+            // flex: 0;
+            // flex-shrink: 1;
+
+            // &:hover {
+            //     background: var(--highlight-background);
+            //     backdrop-filter: blur(5px);
+            // }
         }
     }
 
@@ -34,17 +43,44 @@
         margin: 0;
 
         .artist-artistOverview-artistOverviewContent {
-            background: var(--spice-main);
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(var(--spice-rgb-main),0.5) 3%, rgba(var(--spice-rgb-main),0.8) 6%, var(--spice-main) 10%);
             padding-bottom: calc(var(--player-height) + 50px);
 
             .main-actionBarBackground-background {
                 display: none;
             }
 
-            // .main-actionBar-ActionBar {
-            //     padding-bottom: var(--content-spacing);
-            // }
+            .main-actionBar-ActionBar {
+                .main-playButton-PlayButton {
+                    width: revert;
+                    height: revert;
+                }
+        
+                .Button-sc-y0gtbx-0,
+                .Button-sc-1dqy6lx-0 {
+                    border-radius: var(--highlight-border-radius);
+                    border-color: var(--spice-button);
+                    color: var(--spice-button);
+                    opacity: 1;
+        
+                    &:hover:not(:active) {
+                        transform: none;
+                        color: var(--spice-button-active);
+                        border-color: var(--spice-button-active);
+                    }
+        
+                    &:active {
+                        color:var(--spice-button-active);
+                        border-color: var(--spice-button-active);
+                        @extend %activeTransform;
+                    }
+                }
+            }
         }
+    }
+
+    section[data-test-uri^="spotify:artist"] > div:first-child {
+        padding-bottom: calc(var(--player-height) + 50px);;
     }
 
     .artist-artistDiscography-topBar {

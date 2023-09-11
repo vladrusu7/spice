@@ -136,8 +136,6 @@
     }
 
     .main-actionBar-ActionBar {
-        padding-bottom: var(--content-spacing);
-
         .main-playButton-PlayButton {
             width: revert;
             height: revert;
@@ -226,6 +224,15 @@
             &[aria-expanded="true"] {
                 color: var(--spice-button-active);
             }
+        }
+    }
+
+    .playlist-inlineSearchBox-filterInputContainer .playlist-inlineSearchBox-filterInput {
+        background: var(--spice-button-disabled);
+        color: var(--spice-text);
+
+        &:focus {
+            background: var(--highlight-background);
         }
     }
 }

@@ -13,3 +13,15 @@
         }
     }
 }
+
+.GenericModal.encore-dark-theme > div {
+    border-radius: var(--modal-border-radius);
+
+    &.encore-light-theme.main-confirmDialog-container {
+        background: var(--spice-main);
+
+        h2, p, button[data-encore-id="buttonTertiary"] {
+            color: var(--spice-text);
+        }
+    }
+}
