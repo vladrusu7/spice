@@ -25,7 +25,7 @@
                 height: 48px;
                 background: none;
                 /* margin: 0 auto; */
-                margin-left: calc(var(--panel-content-margin-left) + 8px + 64px + 8px);
+                margin-left: calc(var(--panel-padding-left) + 8px + 64px + 8px);
             }
 
             .main-yourLibraryX-navItems {
@@ -78,10 +78,10 @@
             }
 
             .main-yourLibraryX-libraryContainer {
-                padding-bottom: var(--panel-content-margin-bottom);
+                padding-bottom: var(--panel-padding-bottom);
 
                 .main-yourLibraryX-header {
-                    padding: var(--panel-content-margin-top) 0px 8px var(--panel-content-margin-left);
+                    padding: var(--panel-padding-top) 0px 8px var(--panel-padding-left);
 
                     &.main-yourLibraryX-headerIsCollapsed {
                         .main-yourLibraryX-collapseButton {
@@ -106,10 +106,10 @@
                 // }
 
                 .main-yourLibraryX-libraryRootlist {
-                    padding: 0px 16px 0px var(--panel-content-margin-left);
+                    padding: 0px 16px 0px var(--panel-padding-left);
 
                     &.main-yourLibraryX-libraryIsCollapsed {
-                        padding: 0px 0px 0px var(--panel-content-margin-left);
+                        padding: 0px 0px 0px var(--panel-padding-left);
                     }
 
                     .main-useDropTarget-base {

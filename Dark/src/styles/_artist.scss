@@ -9,7 +9,7 @@
             background-position-x: 50%;
             background-position-y: 50%;
             // background-size: 100% auto;
-            height: calc(100vh - 85px - 2 * var(--panel-margin) - var(--panel-content-margin-bottom) - 3px);
+            height: calc(100vh - 85px - 2 * var(--panel-margin) - var(--panel-padding-bottom) - 3px);
             min-height: unset;
         }
 
@@ -21,7 +21,7 @@
     }
 
     .main-entityHeader-container.main-entityHeader-withBackgroundImage {
-        height: calc(100vh - 85px - 2 * var(--panel-margin) - var(--panel-content-margin-bottom) - 3px);
+        height: calc(100vh - 85px - 2 * var(--panel-margin) - var(--panel-padding-bottom) - 3px);
         max-height: unset;
         padding: var(--content-spacing);
 
@@ -44,7 +44,7 @@
 
         .artist-artistOverview-artistOverviewContent {
             background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(var(--spice-rgb-main),0.5) 3%, rgba(var(--spice-rgb-main),0.8) 6%, var(--spice-main) 10%);
-            padding-bottom: calc(var(--player-height) + 50px);
+            // padding-bottom: calc(var(--player-height) + var(--player-margin-bottom));
 
             .main-actionBarBackground-background {
                 display: none;
@@ -79,9 +79,9 @@
         }
     }
 
-    section[data-test-uri^="spotify:artist"] > div:first-child {
-        padding-bottom: calc(var(--player-height) + 50px);;
-    }
+    // section[data-test-uri^="spotify:artist"] > div:first-child {
+    //     padding-bottom: calc(var(--player-height) + 50px);;
+    // }
 
     .artist-artistDiscography-topBar {
         padding: 0px 16px;
@@ -103,5 +103,9 @@
         .artist-artistDiscography-button[aria-label="grid"] {
             order: 2;
         }
+    }
+
+    .V8TIr8yJq4tYZfPEzm12 { /* ticket page when you click on concert */
+        margin-top: 0px;
     }
 }
