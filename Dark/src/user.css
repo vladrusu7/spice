@@ -17,6 +17,7 @@
   --modal-border-radius: 4px;
   --album-covers-border-radius: 0px;
   --playlist-dynamic-background: block; /* show automatic playlist / album header background [none / block] */
+  --right-sidebar: block; /* [none / block] */
   --highlight-background: rgba(var(--spice-rgb-highlight), 0.6);
 }
 
@@ -27,8 +28,8 @@
 }
 
 /* hide premium shit */
-.main-leaderboardComponent-container,
-.main-billboardComponent-footer,
+.main-leaderboardComponent-container, .ReyA3uE3K7oEz7PTTnAn,
+.WiPggcPDzbwGxoxwLWFf,
 .main-topBar-UpgradeButton,
 .main-contextMenu-menuItemButton[href*=premium] {
   display: none;
@@ -36,20 +37,11 @@
 
 /* hide premium shit */
 /* padding ca sa pot sa dau scroll mai sus de bara de player */
-.main-home-home,
-.playlist-playlist-playlistContent,
-section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
-.artist-artistOverview-artistOverviewContent,
-.album-albumPage-sectionWrapper,
-.show-showPage-sectionWrapper,
-.search-recentSearches-searchPageGrid,
-.x-settings-container,
-.FNDlk94hIuzTU46SX9XI,
-.VvL91cIRcCi1hJh0K845,
-.dpN5ViPOceUWNB5EQPHN,
-.queue-queuePage-queuePage,
-.dt3fysZYdQ6hhWfpmjAu {
-  padding-bottom: calc(var(--player-height) + 2 * var(--player-margin-bottom));
+.Root__main-view .main-view-container main::after {
+  content: "";
+  display: block;
+  background: var(--spice-main);
+  height: calc(var(--player-height) + 2 * var(--player-margin-bottom));
 }
 
 /* padding ca sa pot sa dau scroll mai sus de bara de player */
@@ -71,19 +63,25 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   gap: 0;
   padding: 0;
   background: var(--spice-backdrop);
-  grid-template-areas: "top-bar top-bar top-bar" "left-sidebar main-view right-sidebar" "now-playing-bar now-playing-bar now-playing-bar";
-  grid-template-rows: auto 1fr auto;
 }
 .Root__top-container .Root__main-view {
+  position: absolute;
   width: revert;
+  top: 48px;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: var(--panel-margin) var(--panel-margin) var(--panel-margin) 0;
   padding-bottom: var(--panel-padding-bottom);
   border-radius: var(--panel-border-radius);
+  background: none;
+}
+.Root__top-container .Root__main-view .main-view-container {
+  background: var(--spice-main);
 }
 
 .os-theme-spotify .os-scrollbar-vertical {
   margin-right: 2px;
-  top: var(--content-spacing) !important;
 }
 .os-theme-spotify .os-scrollbar-vertical .os-scrollbar-handle {
   background: var(--spice-misc) !important;
@@ -114,16 +112,24 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   color: var(--spice-text);
 }
 
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-name a,
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-artists a, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button,
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-clearButton, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown {
+.playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-sortBox-sortDropdown, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-name a,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-artists a, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0:focus:not(:focus-visible, :hover, :active), .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-clearButton, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .main-yourLibraryX-librarySortWrapper .Button-sc-1dqy6lx-0 {
   color: var(--spice-button);
 }
 
-.main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled):hover, .main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled):focus, .main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled):focus-within, .main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled).main-trackList-selected, .Chip__ChipComponent-sc-ry3uox-0:hover .ChipInner__ChipInnerComponent-sc-1ly6j4j-0, .view-homeShortcutsGrid-shortcuts .view-homeShortcutsGrid-shortcut:hover, .main-shelf-shelf .main-card-card:hover, .main-contextMenu-menu .main-contextMenu-menuItemButton:hover, .main-contextMenu-menu .main-contextMenu-menuItemButton[aria-expanded=true], .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem:hover, .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]), .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:hover:not([disabled]), .Root__top-bar .main-topBar-container .main-topBar-buddyFeed:hover, .Root__top-bar .main-topBar-container .main-topBar-buddyFeed:active,
-.Root__top-bar .main-topBar-container .main-topBar-whatsNewFeed:hover,
-.Root__top-bar .main-topBar-container .main-topBar-whatsNewFeed:active, .Root__top-bar .main-topBar-container .main-userWidget-boxCondensed:active, .Root__top-bar .main-topBar-container .main-userWidget-boxCondensed[data-context-menu-open=true] {
+.main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled):hover, .main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled):focus, .main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled):focus-within, .main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled).main-trackList-selected, .playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:hover, .playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:active,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:hover,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown:hover, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown:active, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown[aria-expanded=true],
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-sortBox-sortDropdown:hover,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-sortBox-sortDropdown:active,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-sortBox-sortDropdown[aria-expanded=true], .Chip__ChipComponent-sc-ry3uox-0:hover .ChipInner__ChipInnerComponent-sc-1ly6j4j-0, .view-homeShortcutsGrid-shortcuts .view-homeShortcutsGrid-shortcut:hover, .main-shelf-shelf .main-card-card:hover, .main-contextMenu-menu .main-contextMenu-menuItemButton:hover, .main-contextMenu-menu .main-contextMenu-menuItemButton[aria-expanded=true], .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints:not(.main-yourLibraryX-library) .main-yourLibraryX-navItems .main-yourLibraryX-navItem:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .main-yourLibraryX-librarySortWrapper .Button-sc-1dqy6lx-0:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .main-yourLibraryX-librarySortWrapper .Button-sc-1dqy6lx-0:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .main-yourLibraryX-librarySortWrapper .Button-sc-1dqy6lx-0[data-context-menu-open=true], .Root__main-view .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]), .Root__main-view .main-topBar-container .main-topBar-historyButtons .main-topBar-button:hover:not([disabled]), .Root__main-view .main-topBar-container .main-topBar-buddyFeed:hover, .Root__main-view .main-topBar-container .main-topBar-buddyFeed:active,
+.Root__main-view .main-topBar-container .main-topBar-whatsNewFeed:hover,
+.Root__main-view .main-topBar-container .main-topBar-whatsNewFeed:active, .Root__main-view .main-topBar-container .main-userWidget-boxCondensed:active, .Root__main-view .main-topBar-container .main-userWidget-boxCondensed[data-context-menu-open=true] {
   background: var(--highlight-background);
+  border-radius: var(--highlight-border-radius);
 }
 
 .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryRootlist .main-useDropTarget-base .main-yourLibraryX-listItemGroup {
@@ -179,14 +185,22 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
 .main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled).main-trackList-selected .main-trackList-rowHeartButton,
 .main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled).main-trackList-selected .main-trackList-rowDuration,
 .main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled).main-trackList-selected .main-trackList-rowMoreButton,
-.main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled).main-trackList-selected .main-tag-container, .Chip__ChipComponent-sc-ry3uox-0:hover .ChipInner__ChipInnerComponent-sc-1ly6j4j-0, .view-homeShortcutsGrid-shortcuts .view-homeShortcutsGrid-shortcut:hover .view-homeShortcutsGrid-name a, .main-shelf-shelf .main-card-card:hover .main-cardHeader-text,
+.main-trackList-trackList .main-trackList-trackListRow:not(.main-trackList-disabled).main-trackList-selected .main-tag-container, .playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:hover, .playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:active,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:hover,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown:hover, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown:active, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown[aria-expanded=true],
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-sortBox-sortDropdown:hover,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-sortBox-sortDropdown:active,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-sortBox-sortDropdown[aria-expanded=true], .Chip__ChipComponent-sc-ry3uox-0:hover .ChipInner__ChipInnerComponent-sc-1ly6j4j-0, .view-homeShortcutsGrid-shortcuts .view-homeShortcutsGrid-shortcut:hover .view-homeShortcutsGrid-name a, .main-shelf-shelf .main-card-card:hover .main-cardHeader-text,
 .main-shelf-shelf .main-card-card:hover .main-cardSubHeader-root a:hover, .main-contextMenu-menu .main-contextMenu-menuItemButton:hover, .main-contextMenu-menu .main-contextMenu-menuItemButton[aria-expanded=true], .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-name a:hover, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-name a:active,
 .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-artists a:hover,
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-artists a:active, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button:hover, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button:active,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-left .main-nowPlayingWidget-nowPlaying .main-trackInfo-artists a:active, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0:hover, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0:active, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0.d89qxCxbCRj4y1Woft8j,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0:focus:not(:focus-visible, :hover, :active):hover,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0:focus:not(:focus-visible, :hover, :active):active,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0:focus:not(:focus-visible, :hover, :active).d89qxCxbCRj4y1Woft8j, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button:hover, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button:active,
 .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:hover,
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-genericButton-buttonActive, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar:hover .control-button, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem:hover .main-yourLibraryX-navLink svg, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem .main-yourLibraryX-navLink.main-yourLibraryX-navLinkActive svg, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryRootlist .main-useDropTarget-base .main-yourLibraryX-listItemGroup:hover .TypeElement-ballad-textBase-type, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-clearButton:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-clearButton:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown:focus, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-sortBox-sortDropdown[aria-expanded=true], .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]), .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:hover:not([disabled]), .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]) svg, .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:hover:not([disabled]) svg, .Root__top-bar .main-topBar-container .main-topBar-buddyFeed:hover, .Root__top-bar .main-topBar-container .main-topBar-buddyFeed:active,
-.Root__top-bar .main-topBar-container .main-topBar-whatsNewFeed:hover,
-.Root__top-bar .main-topBar-container .main-topBar-whatsNewFeed:active, .Root__top-bar .main-topBar-container .main-userWidget-boxCondensed:active, .Root__top-bar .main-topBar-container .main-userWidget-boxCondensed[data-context-menu-open=true] {
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-genericButton-buttonActive, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar:hover .control-button, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints:not(.main-yourLibraryX-library) .main-yourLibraryX-navItems .main-yourLibraryX-navItem:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints:not(.main-yourLibraryX-library) .main-yourLibraryX-navItems .main-yourLibraryX-navItem:hover .main-yourLibraryX-navLink svg, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints:not(.main-yourLibraryX-library) .main-yourLibraryX-navItems .main-yourLibraryX-navItem .main-yourLibraryX-navLink.main-yourLibraryX-navLinkActive svg, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryRootlist .main-useDropTarget-base .main-yourLibraryX-listItemGroup:hover .TypeElement-ballad-textBase-type, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-clearButton:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-clearButton:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .main-yourLibraryX-librarySortWrapper .Button-sc-1dqy6lx-0:hover, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .main-yourLibraryX-librarySortWrapper .Button-sc-1dqy6lx-0:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .main-yourLibraryX-librarySortWrapper .Button-sc-1dqy6lx-0[data-context-menu-open=true], .Root__main-view .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]), .Root__main-view .main-topBar-container .main-topBar-historyButtons .main-topBar-button:hover:not([disabled]), .Root__main-view .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]) svg, .Root__main-view .main-topBar-container .main-topBar-historyButtons .main-topBar-button:hover:not([disabled]) svg, .Root__main-view .main-topBar-container .main-topBar-buddyFeed:hover, .Root__main-view .main-topBar-container .main-topBar-buddyFeed:active,
+.Root__main-view .main-topBar-container .main-topBar-whatsNewFeed:hover,
+.Root__main-view .main-topBar-container .main-topBar-whatsNewFeed:active, .Root__main-view .main-topBar-container .main-userWidget-boxCondensed:active, .Root__main-view .main-topBar-container .main-userWidget-boxCondensed[data-context-menu-open=true] {
   color: var(--spice-button-active);
 }
 
@@ -196,98 +210,102 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
 .album-albumPage-sectionWrapper .main-actionBar-ActionBar .I3oc8sxg8Duq4kYUGnMo:active,
 .album-albumPage-sectionWrapper .main-actionBar-ActionBar .Button-sc-1dqy6lx-0:active,
 .dpN5ViPOceUWNB5EQPHN .main-actionBar-ActionBar .I3oc8sxg8Duq4kYUGnMo:active,
-.dpN5ViPOceUWNB5EQPHN .main-actionBar-ActionBar .Button-sc-1dqy6lx-0:active, .playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button:active,
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]), .Root__top-bar .main-topBar-container .main-topBar-buddyFeed:active,
-.Root__top-bar .main-topBar-container .main-topBar-whatsNewFeed:active, .Root__top-bar .main-topBar-container .main-userWidget-boxCondensed:active {
+.dpN5ViPOceUWNB5EQPHN .main-actionBar-ActionBar .Button-sc-1dqy6lx-0:active, .playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:active,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown:active, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown[aria-expanded=true],
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-sortBox-sortDropdown:active,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-sortBox-sortDropdown[aria-expanded=true], .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0:active,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0:focus:not(:focus-visible, :hover, :active):active, .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .control-button:active,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .Button-sc-1dqy6lx-0:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints:not(.main-yourLibraryX-library) .main-yourLibraryX-navItems .main-yourLibraryX-navItem:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .main-yourLibraryX-librarySortWrapper .Button-sc-1dqy6lx-0:active, .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .main-yourLibraryX-librarySortWrapper .Button-sc-1dqy6lx-0[data-context-menu-open=true], .Root__main-view .main-topBar-container .main-topBar-historyButtons .main-topBar-button:active:not([disabled]), .Root__main-view .main-topBar-container .main-topBar-buddyFeed:active,
+.Root__main-view .main-topBar-container .main-topBar-whatsNewFeed:active, .Root__main-view .main-topBar-container .main-userWidget-boxCondensed:active {
   transform: scale(0.95);
 }
 
-.Root__top-bar {
-  /* position: fixed; */
+.Root__main-view .main-topBar-container {
+  position: fixed;
   height: 48px;
+  top: 40px;
+  left: 0;
+  right: 0;
+  width: revert;
   background: var(--spice-main);
+  padding: 0px var(--panel-padding-right) 0px var(--panel-padding-left);
   margin: 0 var(--panel-margin) 0 var(--panel-margin);
   border-radius: var(--panel-border-radius);
-  grid-area: top-bar !important;
 }
-.Root__top-bar .main-topBar-container {
-  padding: 0px var(--panel-padding-right) 0px var(--panel-padding-left);
-  height: 48px;
-}
-.Root__top-bar .main-topBar-container .main-topBar-background {
+.Root__main-view .main-topBar-container .main-topBar-background {
   display: none;
 }
-.Root__top-bar .main-topBar-container .main-topBar-historyButtons {
+.Root__main-view .main-topBar-container .main-topBar-historyButtons {
   margin-right: 80px;
 }
-.Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button {
+.Root__main-view .main-topBar-container .main-topBar-historyButtons .main-topBar-button {
   border-radius: var(--highlight-border-radius);
   opacity: 1;
 }
-.Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button[disabled] {
+.Root__main-view .main-topBar-container .main-topBar-historyButtons .main-topBar-button[disabled] {
   color: var(--spice-button-disabled);
 }
-.Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button svg {
+.Root__main-view .main-topBar-container .main-topBar-historyButtons .main-topBar-button svg {
   width: 20px;
   height: 20px;
 }
-.Root__top-bar .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-entityHeader-topbarTitle {
+.Root__main-view .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-entityHeader-topbarTitle {
   margin: 0 auto;
 }
-.Root__top-bar .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-topBar-searchBar {
+.Root__main-view .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-topBar-searchBar {
   margin-left: -40px;
 }
-.Root__top-bar .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-topBar-searchBar .x-searchInput-searchInputInput {
+.Root__main-view .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-topBar-searchBar .x-searchInput-searchInputInput {
   height: 32px;
   padding: 0 32px;
   border-radius: var(--highlight-border-radius);
   background: var(--highlight-background);
 }
-.Root__top-bar .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-topBar-searchBar .x-searchInput-searchInputInput::-moz-placeholder {
+.Root__main-view .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-topBar-searchBar .x-searchInput-searchInputInput::-moz-placeholder {
   color: var(--spice-text);
 }
-.Root__top-bar .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-topBar-searchBar .x-searchInput-searchInputInput::placeholder {
+.Root__main-view .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-topBar-searchBar .x-searchInput-searchInputInput::placeholder {
   color: var(--spice-text);
 }
-.Root__top-bar .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-topBar-searchBar .x-searchInput-searchInputInput:focus {
+.Root__main-view .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-topBar-searchBar .x-searchInput-searchInputInput:focus {
   box-shadow: 0 0 0 2px var(--spice-button-active);
 }
-.Root__top-bar .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-topBar-searchBar .x-searchInput-searchInputIconContainer {
+.Root__main-view .main-topBar-container .main-topBar-topbarContentWrapper .main-topBar-topbarContent .main-topBar-searchBar .x-searchInput-searchInputIconContainer {
   display: none;
 }
-.Root__top-bar .main-topBar-container .main-topBar-buddyFeed,
-.Root__top-bar .main-topBar-container .main-topBar-whatsNewFeed {
+.Root__main-view .main-topBar-container .main-topBar-buddyFeed,
+.Root__main-view .main-topBar-container .main-topBar-whatsNewFeed {
   border-radius: var(--highlight-border-radius);
   transform: none;
 }
-.Root__top-bar .main-topBar-container .main-topBar-buddyFeed svg,
-.Root__top-bar .main-topBar-container .main-topBar-whatsNewFeed svg {
+.Root__main-view .main-topBar-container .main-topBar-buddyFeed svg,
+.Root__main-view .main-topBar-container .main-topBar-whatsNewFeed svg {
   width: 20px;
   height: 20px;
 }
-.Root__top-bar .main-topBar-container .main-userWidget-boxCondensed {
+.Root__main-view .main-topBar-container .main-userWidget-boxCondensed {
   border-radius: var(--highlight-border-radius);
   transform: none;
   --background-press: var(--highlight-background);
 }
-.Root__top-bar .main-topBar-container .main-userWidget-boxCondensed:not(:hover, :active, [data-context-menu-open=true]) {
+.Root__main-view .main-topBar-container .main-userWidget-boxCondensed:not(:hover, :active, [data-context-menu-open=true]) {
   background: none !important;
 }
-.Root__top-bar .main-topBar-container .main-userWidget-boxCondensed svg {
+.Root__main-view .main-topBar-container .main-userWidget-boxCondensed svg {
   width: 20px;
   height: 20px;
 }
-.Root__top-bar .main-topBar-container .main-userWidget-boxCondensed,
-.Root__top-bar .main-topBar-container .main-topBar-buddyFeed,
-.Root__top-bar .main-topBar-container .main-topBar-whatsNewFeed,
-.Root__top-bar .main-topBar-container .main-topBar-historyButtons .main-topBar-button {
+.Root__main-view .main-topBar-container .main-userWidget-boxCondensed,
+.Root__main-view .main-topBar-container .main-topBar-buddyFeed,
+.Root__main-view .main-topBar-container .main-topBar-whatsNewFeed,
+.Root__main-view .main-topBar-container .main-topBar-historyButtons .main-topBar-button {
   background: none;
   color: var(--spice-button);
 }
 
 .Root__nav-bar {
   background: none;
-  margin: var(--panel-margin);
+  margin: 0 var(--panel-margin) var(--panel-margin) var(--panel-margin);
   z-index: unset;
 }
 .Root__nav-bar .main-navBar-mainNav {
@@ -299,20 +317,23 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   margin: 0 auto; */
 }
 .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints.main-yourLibraryX-library {
+  position: absolute;
+  top: 48px;
+  bottom: 0;
+  margin-top: var(--panel-margin);
   border-radius: var(--panel-border-radius);
   background: var(--spice-sidebar);
 }
 .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints:not(.main-yourLibraryX-library) {
   position: absolute;
-  top: calc(-48px - var(--panel-margin));
   width: -moz-fit-content;
   width: fit-content;
   height: 48px;
   background: none;
   /* margin: 0 auto; */
-  margin-left: calc(var(--panel-padding-left) + 8px + 64px + 8px);
+  left: calc(var(--panel-padding-left) + 8px + 64px + 8px);
 }
-.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems {
+.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints:not(.main-yourLibraryX-library) .main-yourLibraryX-navItems {
   display: flex;
   position: relative;
   width: -moz-fit-content;
@@ -324,11 +345,11 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   gap: 8px;
   z-index: 6;
 }
-.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem {
+.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints:not(.main-yourLibraryX-library) .main-yourLibraryX-navItems .main-yourLibraryX-navItem {
   padding: 0;
   border-radius: var(--highlight-border-radius);
 }
-.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem .main-yourLibraryX-navLink {
+.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints:not(.main-yourLibraryX-library) .main-yourLibraryX-navItems .main-yourLibraryX-navItem .main-yourLibraryX-navLink {
   display: flex;
   width: 32px;
   height: 32px;
@@ -337,11 +358,11 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   transition: none;
   color: var(--spice-button);
 }
-.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem .main-yourLibraryX-navLink svg {
+.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints:not(.main-yourLibraryX-library) .main-yourLibraryX-navItems .main-yourLibraryX-navItem .main-yourLibraryX-navLink svg {
   width: 20px;
   height: 20px;
 }
-.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-navItems .main-yourLibraryX-navItem .main-yourLibraryX-navLink .Type__TypeElement-sc-goli3j-0 {
+.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints:not(.main-yourLibraryX-library) .main-yourLibraryX-navItems .main-yourLibraryX-navItem .main-yourLibraryX-navLink .Type__TypeElement-sc-goli3j-0 {
   display: none;
 }
 .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer {
@@ -371,22 +392,20 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   padding: 0;
 }
 .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton {
-  border-radius: var(--highlight-border-radius);
   color: var(--spice-button);
-}
-.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton:hover:not(:active), .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton:focus {
-  transform: none;
-  color: var(--spice-button-active);
   background: none;
 }
-.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton:active {
-  color: var(--spice-button-active);
-  border-color: var(--spice-button-active);
+.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-expandButton:focus:not(:hover) {
+  transform: none;
 }
 .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .x-filterBox-filterInputContainer .x-filterBox-filterInput {
   background: var(--highlight-background);
   color: var(--spice-text);
   border-radius: var(--highlight-border-radius);
+}
+.Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-yourLibraryX-libraryContainer .main-yourLibraryX-libraryFilter .main-yourLibraryX-librarySortWrapper .Button-sc-1dqy6lx-0 {
+  opacity: 1;
+  transform: none;
 }
 .Root__nav-bar .main-navBar-mainNav .main-yourLibraryX-entryPoints .main-useDropTarget-base .main-yourLibraryX-listItemGroup::after {
   display: none;
@@ -469,6 +488,18 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   height: 16px;
   margin: auto 5px;
 }
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0:focus:not(:focus-visible, :hover, :active) {
+  cursor: default;
+}
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0[aria-disabled=true],
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0:focus:not(:focus-visible, :hover, :active)[aria-disabled=true] {
+  display: none;
+}
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0:active,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .player-controls__left .Button-sc-1dqy6lx-0:focus:not(:focus-visible, :hover, :active):active {
+  opacity: 1;
+}
 .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-center .player-controls .player-controls__buttons .main-playPauseButton-button {
   --button-size: 50px !important;
   background-color: var(--spice-player);
@@ -536,13 +567,13 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   margin: 0;
   flex: 0;
 }
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar .x1jWng8HDweDS840aiIA {
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar .volume-bar__slider-container {
   position: absolute;
   display: none;
   width: 150px;
   right: -150px;
 }
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar .x1jWng8HDweDS840aiIA::before {
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar .volume-bar__slider-container::before {
   content: "";
   position: absolute;
   background: rgba(0, 0, 0, 0.2);
@@ -555,8 +586,8 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   transform: translate(0, -50%);
   top: 50%;
 }
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar:hover .x1jWng8HDweDS840aiIA,
-.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar:hover .x1jWng8HDweDS840aiIA::before {
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar:hover .volume-bar__slider-container,
+.main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar:hover .volume-bar__slider-container::before {
   display: block;
 }
 .main-nowPlayingBar-container .main-nowPlayingBar-nowPlayingBar .main-nowPlayingBar-right .main-nowPlayingBar-extraControls .main-nowPlayingBar-volumeBar:hover .x-progressBar-fillColor {
@@ -571,14 +602,11 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   z-index: 11;
 }
 
-.main-shuffleButton-button[disabled],
 .main-repeatButton-button[disabled],
 .control-button[aria-label="Full screen"] {
   display: none;
 }
 
-.main-shuffleButton-button,
-.main-shuffleButton-button:focus:not(:focus-visible, :hover, :active),
 .main-skipBackButton-button,
 .main-skipBackButton-button:focus:not(:focus-visible, :hover, :active),
 .main-skipForwardButton-button,
@@ -589,9 +617,6 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   color: var(--spice-button);
 }
 
-.main-shuffleButton-button:hover,
-.main-shuffleButton-button.main-shuffleButton-active,
-.main-shuffleButton-button.main-shuffleButton-active:not([disabled]):focus:not(:focus-visible):not(:hover),
 .main-skipBackButton-button:hover,
 .main-skipForwardButton-button:hover,
 .main-repeatButton-button:hover,
@@ -606,8 +631,6 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   color: var(--spice-button-active);
 }
 
-.main-shuffleButton-button:active,
-.main-shuffleButton-button:active:focus,
 .main-skipBackButton-button:active,
 .main-skipBackButton-button:active:focus,
 .main-skipForwardButton-button:active,
@@ -775,53 +798,53 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
 .dpN5ViPOceUWNB5EQPHN {
   margin: 0;
 }
-.playlist-playlist-playlist .main-entityHeader-container,
-.album-albumPage-sectionWrapper .main-entityHeader-container,
-.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container {
+.playlist-playlist-playlist .main-entityHeader-container.main-entityHeader-newEntityHeaders,
+.album-albumPage-sectionWrapper .main-entityHeader-container.main-entityHeader-newEntityHeaders,
+.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container.main-entityHeader-newEntityHeaders {
   height: unset;
   max-height: unset;
   min-height: unset;
   padding: var(--content-spacing);
 }
-.playlist-playlist-playlist .main-entityHeader-container .main-entityHeader-backgroundColor,
-.album-albumPage-sectionWrapper .main-entityHeader-container .main-entityHeader-backgroundColor,
-.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container .main-entityHeader-backgroundColor {
+.playlist-playlist-playlist .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-backgroundColor,
+.album-albumPage-sectionWrapper .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-backgroundColor,
+.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-backgroundColor {
   display: var(--playlist-dynamic-background);
 }
-.playlist-playlist-playlist .main-entityHeader-container .main-entityHeader-imageContainer,
-.album-albumPage-sectionWrapper .main-entityHeader-container .main-entityHeader-imageContainer,
-.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container .main-entityHeader-imageContainer {
+.playlist-playlist-playlist .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-imageContainer,
+.album-albumPage-sectionWrapper .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-imageContainer,
+.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-imageContainer {
   margin-left: auto;
 }
-.playlist-playlist-playlist .main-entityHeader-container .main-entityHeader-imageContainer .main-entityHeader-shadow,
-.album-albumPage-sectionWrapper .main-entityHeader-container .main-entityHeader-imageContainer .main-entityHeader-shadow,
-.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container .main-entityHeader-imageContainer .main-entityHeader-shadow {
+.playlist-playlist-playlist .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-imageContainer .main-entityHeader-shadow,
+.album-albumPage-sectionWrapper .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-imageContainer .main-entityHeader-shadow,
+.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-imageContainer .main-entityHeader-shadow {
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
-.playlist-playlist-playlist .main-entityHeader-container .main-entityHeader-imageContainer .main-editImageButton-image,
-.album-albumPage-sectionWrapper .main-entityHeader-container .main-entityHeader-imageContainer .main-editImageButton-image,
-.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container .main-entityHeader-imageContainer .main-editImageButton-image {
+.playlist-playlist-playlist .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-imageContainer .main-editImageButton-image,
+.album-albumPage-sectionWrapper .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-imageContainer .main-editImageButton-image,
+.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-imageContainer .main-editImageButton-image {
   background: var(--highlight-background);
 }
-.playlist-playlist-playlist .main-entityHeader-container .main-entityHeader-headerText,
-.album-albumPage-sectionWrapper .main-entityHeader-container .main-entityHeader-headerText,
-.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container .main-entityHeader-headerText {
+.playlist-playlist-playlist .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-headerText,
+.album-albumPage-sectionWrapper .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-headerText,
+.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-headerText {
   display: block;
   flex: none;
   flex-shrink: 1;
   margin: auto auto auto 0;
 }
-.playlist-playlist-playlist .main-entityHeader-container .main-entityHeader-headerText .playlist-playlist-whiteOpacity,
-.album-albumPage-sectionWrapper .main-entityHeader-container .main-entityHeader-headerText .playlist-playlist-whiteOpacity,
-.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container .main-entityHeader-headerText .playlist-playlist-whiteOpacity {
+.playlist-playlist-playlist .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-headerText .playlist-playlist-whiteOpacity,
+.album-albumPage-sectionWrapper .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-headerText .playlist-playlist-whiteOpacity,
+.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-headerText .playlist-playlist-whiteOpacity {
   color: inherit;
 }
-.playlist-playlist-playlist .main-entityHeader-container .main-entityHeader-headerText .main-entityHeader-metaDataText,
-.playlist-playlist-playlist .main-entityHeader-container .main-entityHeader-headerText .main-entityHeader-metaDataText .UyzJidwrGk3awngSGIwv,
-.album-albumPage-sectionWrapper .main-entityHeader-container .main-entityHeader-headerText .main-entityHeader-metaDataText,
-.album-albumPage-sectionWrapper .main-entityHeader-container .main-entityHeader-headerText .main-entityHeader-metaDataText .UyzJidwrGk3awngSGIwv,
-.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container .main-entityHeader-headerText .main-entityHeader-metaDataText,
-.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container .main-entityHeader-headerText .main-entityHeader-metaDataText .UyzJidwrGk3awngSGIwv {
+.playlist-playlist-playlist .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-headerText .main-entityHeader-metaDataText,
+.playlist-playlist-playlist .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-headerText .main-entityHeader-metaDataText .UyzJidwrGk3awngSGIwv,
+.album-albumPage-sectionWrapper .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-headerText .main-entityHeader-metaDataText,
+.album-albumPage-sectionWrapper .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-headerText .main-entityHeader-metaDataText .UyzJidwrGk3awngSGIwv,
+.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-headerText .main-entityHeader-metaDataText,
+.dpN5ViPOceUWNB5EQPHN .main-entityHeader-container.main-entityHeader-newEntityHeaders .main-entityHeader-headerText .main-entityHeader-metaDataText .UyzJidwrGk3awngSGIwv {
   color: unset;
 }
 .playlist-playlist-playlist .main-actionBarBackground-background,
@@ -873,50 +896,48 @@ section.playlist-playlist-playlist:not([data-test-uri^="spotify:playlist:"]),
   border-color: var(--spice-button-active);
 }
 
-.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton {
-  border-radius: var(--highlight-border-radius);
+.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton {
   color: var(--spice-button);
-}
-.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:hover:not(:active), .playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:focus {
-  transform: none;
-  color: var(--spice-button-active);
   background: none;
 }
-.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:active {
-  color: var(--spice-button-active);
-  border-color: var(--spice-button-active);
+.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:focus:not(:hover),
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-expandButton:focus:not(:hover) {
+  transform: none;
 }
-.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-searchIconContainer {
+.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-searchIconContainer,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-searchIconContainer {
   color: var(--spice-text);
 }
-.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-filterInput {
+.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-filterInput,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-filterInput {
   background: var(--highlight-background);
   color: var(--spice-text);
   border-radius: var(--highlight-border-radius);
 }
-.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-filterInput::-moz-placeholder {
+.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-filterInput::-moz-placeholder, .album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-filterInput::-moz-placeholder {
   color: var(--spice-text);
 }
-.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-filterInput::placeholder {
+.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-filterInput::placeholder,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-filterInput::placeholder {
   color: var(--spice-text);
 }
-.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-clearButton {
+.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-clearButton,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-clearButton {
   color: var(--spice-button);
 }
-.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-clearButton:hover, .playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-clearButton:active {
+.playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-clearButton:hover, .playlist-playlist-playlist .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-clearButton:active,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-clearButton:hover,
+.album-albumPage-sectionWrapper .main-actionBar-ActionBar .x-filterBox-filterInputContainer .x-filterBox-clearButton:active {
   color: var(--spice-button-active);
 }
-.playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown {
-  color: var(--spice-button);
-}
-.playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown:focus, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown:hover, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown:active, .playlist-playlist-playlist .main-actionBar-ActionBar .x-sortBox-sortDropdown[aria-expanded=true] {
-  color: var(--spice-button-active);
-}
-.playlist-playlist-playlist .playlist-inlineSearchBox-filterInputContainer .playlist-inlineSearchBox-filterInput {
+.playlist-playlist-playlist .playlist-inlineSearchBox-filterInputContainer .playlist-inlineSearchBox-filterInput,
+.album-albumPage-sectionWrapper .playlist-inlineSearchBox-filterInputContainer .playlist-inlineSearchBox-filterInput {
   background: var(--spice-button-disabled);
   color: var(--spice-text);
 }
-.playlist-playlist-playlist .playlist-inlineSearchBox-filterInputContainer .playlist-inlineSearchBox-filterInput:focus {
+.playlist-playlist-playlist .playlist-inlineSearchBox-filterInputContainer .playlist-inlineSearchBox-filterInput:focus,
+.album-albumPage-sectionWrapper .playlist-inlineSearchBox-filterInputContainer .playlist-inlineSearchBox-filterInput:focus {
   background: var(--highlight-background);
 }
 

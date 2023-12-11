@@ -99,6 +99,30 @@
                         margin: auto 5px;
                     }
 
+                    .player-controls__left {
+                        .Button-sc-1dqy6lx-0,
+                        .Button-sc-1dqy6lx-0:focus:not(:focus-visible, :hover, :active) {
+                            @extend %buttonColor;
+                            cursor: default;
+
+                            &[aria-disabled="true"] {
+                                display: none;
+                            }
+
+                            &:hover,
+                            &:active,
+                            &.d89qxCxbCRj4y1Woft8j {
+                            // &.d89qxCxbCRj4y1Woft8j:not([aria-disabled="true"]):focus:not(:hover) {
+                                @extend %activeColor;
+                            }
+
+                            &:active {
+                                @extend %activeTransform;
+                                opacity: 1;
+                            }
+                        }
+                    }
+
                     .main-playPauseButton-button {
                         --button-size: 50px !important;
                         background-color: var(--spice-player);
@@ -196,7 +220,7 @@
                     margin: 0;
                     flex: 0;
     
-                    .x1jWng8HDweDS840aiIA {
+                    .volume-bar__slider-container {
                         position: absolute;
                         display: none;
                         width: 150px;
@@ -217,8 +241,8 @@
                     }
     
                     &:hover {
-                        .x1jWng8HDweDS840aiIA,
-                        .x1jWng8HDweDS840aiIA::before {
+                        .volume-bar__slider-container,
+                        .volume-bar__slider-container::before {
                             display: block;
                         }
     
@@ -244,14 +268,14 @@
     z-index: 11;
 }
 
-.main-shuffleButton-button[disabled],
+// .main-shuffleButton-button[disabled],
 .main-repeatButton-button[disabled],
 .control-button[aria-label="Full screen"] {
     display: none;
 }
 
-.main-shuffleButton-button,
-.main-shuffleButton-button:focus:not(:focus-visible, :hover, :active),
+// .main-shuffleButton-button,
+// .main-shuffleButton-button:focus:not(:focus-visible, :hover, :active),
 .main-skipBackButton-button,
 .main-skipBackButton-button:focus:not(:focus-visible, :hover, :active),
 .main-skipForwardButton-button,
@@ -262,9 +286,9 @@
     color: var(--spice-button);
 }
 
-.main-shuffleButton-button:hover,
-.main-shuffleButton-button.main-shuffleButton-active,
-.main-shuffleButton-button.main-shuffleButton-active:not([disabled]):focus:not(:focus-visible):not(:hover),
+// .main-shuffleButton-button:hover,
+// .main-shuffleButton-button.main-shuffleButton-active,
+// .main-shuffleButton-button.main-shuffleButton-active:not([disabled]):focus:not(:focus-visible):not(:hover),
 .main-skipBackButton-button:hover,
 .main-skipForwardButton-button:hover,
 .main-repeatButton-button:hover,
@@ -279,8 +303,8 @@
     color: var(--spice-button-active);
 }
 
-.main-shuffleButton-button:active,
-.main-shuffleButton-button:active:focus,
+// .main-shuffleButton-button:active,
+// .main-shuffleButton-button:active:focus,
 .main-skipBackButton-button:active,
 .main-skipBackButton-button:active:focus,
 .main-skipForwardButton-button:active,

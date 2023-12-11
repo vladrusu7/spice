@@ -90,7 +90,7 @@
 .dpN5ViPOceUWNB5EQPHN {
     margin: 0;
 
-    .main-entityHeader-container {
+    .main-entityHeader-container.main-entityHeader-newEntityHeaders {
         height: unset;
         max-height: unset;
         min-height: unset;
@@ -168,7 +168,8 @@
     }
 }
 
-.playlist-playlist-playlist {
+.playlist-playlist-playlist,
+.album-albumPage-sectionWrapper {
     .main-actionBar-ActionBar {
         .x-filterBox-filterInputContainer {
             // &.x-filterBox-expandedOrHasFilter .x-filterBox-expandButton {
@@ -177,18 +178,20 @@
             // }
 
             .x-filterBox-expandButton {
-                border-radius: var(--highlight-border-radius);
                 color: var(--spice-button);
-                &:hover:not(:active),
-                &:focus {
+                background: none;
+
+                &:focus:not(:hover) {
                     transform: none;
-                    color: var(--spice-button-active);
-                    background: none;
                 }
     
+                &:hover,
                 &:active {
-                    color:var(--spice-button-active);
-                    border-color: var(--spice-button-active);
+                    @extend %activeColor;
+                    @extend %activeHighlight;
+                }
+
+                &:active {
                     @extend %activeTransform;
                 }
             }
@@ -216,13 +219,19 @@
         }
 
         .x-sortBox-sortDropdown {
-            color: var(--spice-button);
+            @extend %buttonColor;
 
-            &:focus,
+            // &:focus,
             &:hover,
             &:active,
             &[aria-expanded="true"] {
-                color: var(--spice-button-active);
+                @extend %activeHighlight;
+                @extend %activeColor;
+            }
+
+            &:active,
+            &[aria-expanded="true"] {
+                @extend %activeTransform;
             }
         }
     }

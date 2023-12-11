@@ -2,7 +2,7 @@
 
 .Root__nav-bar {
     background: none;
-    margin: var(--panel-margin);
+    margin: 0 var(--panel-margin) var(--panel-margin) var(--panel-margin);
     z-index: unset;
     
     .main-navBar-mainNav {
@@ -14,64 +14,72 @@
             margin: 0 auto; */
 
             &.main-yourLibraryX-library {
+                position: absolute;
+                top: 48px;
+                bottom: 0;
+                margin-top: var(--panel-margin);
                 border-radius: var(--panel-border-radius);
                 background: var(--spice-sidebar);
             }
 
             &:not(.main-yourLibraryX-library) {
                 position: absolute;
-                top: calc(-48px - var(--panel-margin));
+                // top: calc(-48px - var(--panel-margin));
                 width: fit-content;
                 height: 48px;
                 background: none;
                 /* margin: 0 auto; */
-                margin-left: calc(var(--panel-padding-left) + 8px + 64px + 8px);
-            }
+                left: calc(var(--panel-padding-left) + 8px + 64px + 8px);
 
-            .main-yourLibraryX-navItems {
-                display: flex;
-                position: relative;
-                width: fit-content;
-                height: 100%;
-                align-items: center;
-                /* padding: 8px 0px; */
-                padding: 0;
-                gap: 8px;
-                z-index: 6;
-
-                .main-yourLibraryX-navItem {
+                .main-yourLibraryX-navItems {
+                    display: flex;
+                    position: relative;
+                    width: fit-content;
+                    height: 100%;
+                    align-items: center;
+                    /* padding: 8px 0px; */
                     padding: 0;
-                    border-radius: var(--highlight-border-radius);
-
-                    &:hover {
-                        @extend %activeHighlight;
-                        @extend %activeColor;
-
-                        .main-yourLibraryX-navLink svg {
+                    gap: 8px;
+                    z-index: 6;
+    
+                    .main-yourLibraryX-navItem {
+                        padding: 0;
+                        border-radius: var(--highlight-border-radius);
+    
+                        &:hover {
+                            @extend %activeHighlight;
                             @extend %activeColor;
-                        }
-                    }
-
-                    .main-yourLibraryX-navLink {
-                        display: flex;
-                        width: 32px;
-                        height: 32px;
-                        align-items: center;
-                        justify-content: center;
-                        transition: none;
-                        color: var(--spice-button);
-
-                        &.main-yourLibraryX-navLinkActive svg {
-                            @extend %activeColor;
+    
+                            .main-yourLibraryX-navLink svg {
+                                @extend %activeColor;
+                            }
                         }
 
-                        svg {
-                            width: 20px;
-                            height: 20px;
+                        &:active {
+                            @extend %activeTransform;
                         }
-                        
-                        .Type__TypeElement-sc-goli3j-0 {
-                            display: none;
+    
+                        .main-yourLibraryX-navLink {
+                            display: flex;
+                            width: 32px;
+                            height: 32px;
+                            align-items: center;
+                            justify-content: center;
+                            transition: none;
+                            color: var(--spice-button);
+    
+                            &.main-yourLibraryX-navLinkActive svg {
+                                @extend %activeColor;
+                            }
+    
+                            svg {
+                                width: 20px;
+                                height: 20px;
+                            }
+                            
+                            .Type__TypeElement-sc-goli3j-0 {
+                                display: none;
+                            }
                         }
                     }
                 }
@@ -140,18 +148,20 @@
                         // }
             
                         .x-filterBox-expandButton {
-                            border-radius: var(--highlight-border-radius);
                             color: var(--spice-button);
-                            &:hover:not(:active),
-                            &:focus {
+                            background: none;
+
+                            &:focus:not(:hover) {
                                 transform: none;
-                                color: var(--spice-button-active);
-                                background: none;
                             }
                 
+                            &:hover,
                             &:active {
-                                color:var(--spice-button-active);
-                                border-color: var(--spice-button-active);
+                                @extend %activeColor;
+                                @extend %activeHighlight;
+                            }
+
+                            &:active {
                                 @extend %activeTransform;
                             }
                         }
@@ -182,16 +192,23 @@
                         }
                     }
             
-                    .x-sortBox-sortDropdown {
+                    .main-yourLibraryX-librarySortWrapper .Button-sc-1dqy6lx-0 {
                         // color: var(--spice-button);
+                        opacity: 1;
+                        transform: none;
                         @extend %buttonColor;
             
-                        &:focus,
+                        // &:focus,
                         &:hover,
                         &:active,
-                        &[aria-expanded="true"] {
-                            // color: var(--spice-button-active);
+                        &[data-context-menu-open="true"] {
                             @extend %activeColor;
+                            @extend %activeHighlight;
+                        }
+
+                        &:active,
+                        &[data-context-menu-open="true"] {
+                            @extend %activeTransform;
                         }
                     }
                 }

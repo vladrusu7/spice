@@ -1,0 +1,26 @@
+:root {
+    --player-width: 750px;
+    --player-height: 100px;
+    --player-margin-bottom: 50px;
+    --player-album-cover-size: 64px;
+    --show-lyrics-background: none;             /* [none / block] */
+
+    --panel-margin: 5px;                        /* distance between panels */
+    --panel-padding-left: 5px;                  /* distance between content and edge of window */
+    --panel-padding-right: 5px;                 /* distance between content and edge of window */
+    --panel-padding-top: 8px;                   /* distance between content and edge of window */
+    --panel-padding-bottom: 0px;                /* distance between content and edge of window */
+
+    --player-border-radius: 0px;
+    --panel-border-radius: 8px;
+    --highlight-border-radius: 4px;             /* button / playlist / sidebar items hover background */
+    --card-border-radius: 4px;
+    --context-menu-border-radius: 4px;
+    --modal-border-radius: 4px;
+    --album-covers-border-radius: 0px;
+
+    --playlist-dynamic-background: block;       /* show automatic playlist / album header background [none / block] */
+    --right-sidebar: block;                     /* [none / block] */
+
+    --highlight-background: rgba(var(--spice-rgb-highlight), 0.6);
+}
